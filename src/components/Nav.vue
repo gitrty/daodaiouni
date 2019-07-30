@@ -14,6 +14,7 @@
           <li>品牌故事</li>
         </ul>
       </div>
+
       <!-- 搜索框 -->
       <div class="search">
         <input type="text" placeholder="搜索GIA证书号查询价格" />
@@ -30,6 +31,40 @@
         <span></span>
       </div>
     </div>
+    <!-- 菜单 -->
+    <div class="sub-menu">
+      <div class="sub-menu-con">
+        <ul>
+          <li>{{sub_menu[0][0]}}</li>
+          <li>{{sub_menu[0][1]}}</li>
+          <li>{{sub_menu[0][2]}}</li>
+          <li>{{sub_menu[0][3]}}</li>
+          <li>{{sub_menu[0][4]}}</li>
+          <li>{{sub_menu[0][5]}}</li>
+        </ul>
+        <ul>
+          <li>{{sub_menu[1][0]}}</li>
+          <li>{{sub_menu[1][1]}}</li>
+          <li>{{sub_menu[1][2]}}</li>
+          <li>{{sub_menu[1][3]}}</li>
+          <li>{{sub_menu[1][4]}}</li>
+          <li>{{sub_menu[1][5]}}</li>
+        </ul>
+        <ul class="two-ul">
+          <li>{{sub_menu[2][0]}}</li>
+          <li>{{sub_menu[2][1]}}</li>
+          <li>{{sub_menu[2][2]}}</li>
+          <li>{{sub_menu[2][3]}}</li>
+          <li>{{sub_menu[2][4]}}</li>
+          <li>{{sub_menu[2][5]}}</li>
+        </ul>
+        <div class="f-r">
+          <a href="javascript:void(0)">
+            <img :src="imgUrl" class="menu-img" />
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -37,7 +72,115 @@
 export default {
   data() {
     return {
-      shopping_num: 0
+      shopping_num: 0,
+      sub_menu: [
+        ["钻石", "30分裸钻", "50分裸钻", "70分裸钻", "克拉钻", "探索全部钻石"],
+        ["形状", "圆形", "心形", "水滴形", "公主方", "祖母绿"],
+        [
+          "定制",
+          "先选钻托",
+          "先选钻石",
+          "钻石4C知识",
+          "钻石其他参数",
+          "钻石证书"
+        ]
+      ],
+      imgUrl: require("../images/menu_banner01.jpg"),
+      menu_info: [
+        [
+          [
+            "钻石",
+            "30分裸钻",
+            "50分裸钻",
+            "70分裸钻",
+            "克拉钻",
+            "探索全部钻石"
+          ],
+          ["形状", "圆形", "心形", "水滴形", "公主方", "祖母绿"],
+          [
+            "定制",
+            "先选钻托",
+            "先选钻石",
+            "钻石4C知识",
+            "钻石其他参数",
+            "钻石证书"
+          ]
+        ],
+        [
+          ["婚戒", "女士婚戒", "男士婚戒", "情侣对戒", "探索全部", ""],
+          ["大小", "30分钻戒", "50分钻戒", "60分钻戒", "1克拉钻戒", ""],
+          [
+            "主题系列",
+            "Fover永远经典款",
+            "The Start 星光系列",
+            "爱守护系列",
+            "The Memory 铭记系列 ",
+            ""
+          ]
+        ],
+        [
+          [
+            "钻石",
+            "30分裸钻",
+            "50分裸钻",
+            "70分裸钻",
+            "克拉钻",
+            "探索全部钻石"
+          ],
+          ["形状", "圆形", "心形", "水滴形", "公主方", "祖母绿"],
+          [
+            "定制",
+            "先选钻托",
+            "先选钻石",
+            "钻石4C知识",
+            "钻石其他参数",
+            "钻石证书"
+          ]
+        ],
+        [
+          ["婚戒", "女士婚戒", "男士婚戒", "情侣对戒", "探索全部", ""],
+          ["大小", "30分钻戒", "50分钻戒", "60分钻戒", "1克拉钻戒", ""],
+          [
+            "主题系列",
+            "Fover永远经典款",
+            "The Start 星光系列",
+            "爱守护系列",
+            "The Memory 铭记系列 ",
+            ""
+          ]
+        ],
+        [
+          [
+            "钻石",
+            "30分裸钻",
+            "50分裸钻",
+            "70分裸钻",
+            "克拉钻",
+            "探索全部钻石"
+          ],
+          ["形状", "圆形", "心形", "水滴形", "公主方", "祖母绿"],
+          [
+            "定制",
+            "先选钻托",
+            "先选钻石",
+            "钻石4C知识",
+            "钻石其他参数",
+            "钻石证书"
+          ]
+        ],
+        [
+          ["婚戒", "女士婚戒", "男士婚戒", "情侣对戒", "探索全部", ""],
+          ["大小", "30分钻戒", "50分钻戒", "60分钻戒", "1克拉钻戒", ""],
+          [
+            "主题系列",
+            "Fover永远经典款",
+            "The Start 星光系列",
+            "爱守护系列",
+            "The Memory 铭记系列 ",
+            ""
+          ]
+        ]
+      ]
     };
   },
   // js实现导航栏 sticky 粘性定位
@@ -58,6 +201,44 @@ export default {
         document.querySelector(".banner").style.marginTop = 0;
       }
     });
+    // 导航颜色切换
+    let lis = document.querySelectorAll(".nav-l>ul>li");
+    let menuImg = document.querySelector(".menu-img");
+    let subMenu = document.querySelector(".sub-menu");
+    subMenu.style.display = "none";
+    lis.forEach((el, index) => {
+      el.onmouseenter = () => {
+        lis.forEach(el => {
+          el.style.borderBottom = "none";
+          el.style.color = "#000";
+        });
+        el.style.borderBottom = "1px solid #ca0000";
+        el.style.color = "#ca0000";
+        if (index > 0 && index < 7) {
+          // 控制显示menu消失
+          subMenu.style.display = "block";
+          // 切换menu栏图片
+          menuImg.setAttribute(
+            "src",
+            require(`../images/menu_banner0${index}.jpg`)
+          );
+          // 切换menu文字内容
+          this.sub_menu = this.menu_info[index - 1];
+        } else {
+          subMenu.style.display = "none";
+        }
+      };
+    });
+
+    subMenu.onmouseleave = () => {
+      subMenu.style.display = "none";
+    };
+    
+    oNav.onmouseleave = () => {
+      subMenu.style.display = "none";
+    };
+
+    // end
   }
 };
 </script>
@@ -71,7 +252,7 @@ export default {
   line-height: 44px;
   top: 0;
   position: relative;
-  z-index: 100;
+  z-index: 10;
   .nav-con {
     position: relative;
     width: 1200px;
@@ -85,14 +266,17 @@ export default {
         text-align: center;
         height: 44px;
         width: 1200px;
+        // background-color: red;
         li {
           cursor: pointer;
           float: left;
           width: 104px;
           height: 44px;
-          &:hover {
-            border-bottom: 1px solid #ca0000;
-          }
+          // position: relative;
+          // &:hover {
+          //   border-bottom: 1px solid #ca0000;
+          //   color: #ca0000;
+          // }
         }
       }
     }
@@ -171,6 +355,62 @@ export default {
         &:hover {
           background-position: -90px -47px;
         }
+      }
+    }
+  }
+}
+
+.sub-menu {
+  width: 100%;
+  height: 320px;
+  position: absolute;
+  z-index: 2;
+  background: #fff;
+  left: 0px;
+  border-top: 1px solid #dfdfdf;
+  .sub-menu-con {
+    padding: 30px 0 30px 32px;
+    width: 1200px;
+    height: 100%;
+    // background-color: pink;
+    margin: 0 auto;
+    position: relative;
+    ul {
+      float: left;
+      li {
+        cursor: pointer;
+        width: 158px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 12px;
+        font-family: "宋体";
+        &:hover {
+          color: #ca0000;
+        }
+      }
+      li:nth-child(1) {
+        height: 28px;
+        line-height: 28px;
+        font-size: 14px;
+        margin-bottom: 6px;
+        font-weight: bold;
+        font-family: "宋体";
+      }
+    }
+    .two-ul {
+      width: 180px;
+      // margin-left: 50px;
+      text-align: left;
+      // background: indianred;
+      position: absolute;
+      left: 360px;
+      padding-left: 50px;
+      border-left: 1px solid #dfdfdf;
+      li:nth-child(2),
+      li:nth-child(3) {
+        margin-bottom: 6px;
+        font-weight: bold;
+        font-family: "宋体";
       }
     }
   }

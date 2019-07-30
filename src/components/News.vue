@@ -604,7 +604,7 @@ export default {
         margin-left: 12px;
         margin-top: 16px;
         li {
-          width: 316px;
+          width: 330px;
           float: left;
           text-align: left;
           font-family: "宋体";
@@ -613,7 +613,7 @@ export default {
             color: #000;
           }
           h3 {
-            width: 238px;
+            width: 248px;
             display: inline-table;
           }
           span {

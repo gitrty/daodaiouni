@@ -5,8 +5,8 @@
     <!-- logo栏 -->
     <Logo />
     <!-- 导航栏 -->
-    <Nav />
-    <!-- vue路由 Home/Shopping 组件-->
+    <!-- <Nav /> -->
+    <!-- vue路由 Home/Shopping/ 组件-->
     <div>
       <router-view />
     </div>

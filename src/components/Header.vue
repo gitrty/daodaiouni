@@ -64,7 +64,7 @@ export default {
         cursor: pointer;
         width: 109px;
         position: relative;
-        z-index: 1;
+        z-index: 100;
         &:hover {
           background-color: #fff;
         }
@@ -78,6 +78,7 @@ export default {
           border: 1px solid #dfdfdf;
           border-top: 0;
           position: absolute;
+          z-index: 333;
           left: -20px;
           background: #fff url(./../images/qrcode.png) no-repeat center;
         }

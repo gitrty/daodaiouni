@@ -23,15 +23,18 @@
       <!-- 2 -->
       <div class="rx-con-con container">
         <div class="big_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../images/1500616780447824288.jpg"
-              width="592"
-              height="288"
-              :alt="nameArr[0]"
-              :title="nameArr[0]"
-            />
-          </a>
+          <router-link to="/details">
+            <a href="javascript:void(0)" target="_blank">
+              <img
+                src="../images/1500616780447824288.jpg"
+                width="592"
+                height="288"
+                :alt="nameArr[0]"
+                :title="nameArr[0]"
+              />
+            </a>
+          </router-link>
+
           <a href="javascript:void(0)" target="_blank" class="big_link_txt">
             <span class="pro_tit">{{nameArr[0]}}</span>
             <br />
@@ -39,15 +42,17 @@
           </a>
         </div>
         <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../images/1507630507958889089.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[1]"
-              :title="nameArr[1]"
-            />
-          </a>
+          <router-link to="/details">
+            <a href="javascript:void(0)" target="_blank">
+              <img
+                src="../images/1507630507958889089.jpg"
+                width="288"
+                height="288"
+                :alt="nameArr[1]"
+                :title="nameArr[1]"
+              />
+            </a>
+          </router-link>
           <a href="javascript:void(0)" target="_blank" class="small_link_txt">
             <span class="pro_tit">{{nameArr[1]}}</span>
             <br />
@@ -55,15 +60,17 @@
           </a>
         </div>
         <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../images/1500616949483449841.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[2]"
-              :title="nameArr[2]"
-            />
-          </a>
+          <router-link to="/details">
+            <a href="javascript:void(0)" target="_blank">
+              <img
+                src="../images/1500616949483449841.jpg"
+                width="288"
+                height="288"
+                :alt="nameArr[2]"
+                :title="nameArr[2]"
+              />
+            </a>
+          </router-link>
           <a href="javascript:void(0)" target="_blank" class="small_link_txt">
             <span class="pro_tit">{{nameArr[2]}}</span>
             <br />
@@ -74,15 +81,17 @@
       <!-- 3 -->
       <div class="rx-con-con container">
         <div class="small_link" id="first-img">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../images/1507630587747792085.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[3]"
-              :title="nameArr[3]"
-            />
-          </a>
+          <router-link to="/details">
+            <a href="javascript:void(0)" target="_blank">
+              <img
+                src="../images/1507630587747792085.jpg"
+                width="288"
+                height="288"
+                :alt="nameArr[3]"
+                :title="nameArr[3]"
+              />
+            </a>
+          </router-link>
           <a href="javascript:void(0)" target="_blank" class="small_link_txt">
             <span class="pro_tit">{{nameArr[3]}}</span>
             <br />
@@ -90,15 +99,17 @@
           </a>
         </div>
         <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../images/1500617011079585423.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[4]"
-              :title="nameArr[4]"
-            />
-          </a>
+          <router-link to="/details">
+            <a href="javascript:void(0)" target="_blank">
+              <img
+                src="../images/1500617011079585423.jpg"
+                width="288"
+                height="288"
+                :alt="nameArr[4]"
+                :title="nameArr[4]"
+              />
+            </a>
+          </router-link>
           <a href="javascript:void(0)" target="_blank" class="small_link_txt">
             <span class="pro_tit">{{nameArr[4]}}</span>
             <br />
@@ -106,15 +117,17 @@
           </a>
         </div>
         <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../images/1500617216838965590.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[5]"
-              :title="nameArr[5]"
-            />
-          </a>
+          <router-link to="/details">
+            <a href="javascript:void(0)" target="_blank">
+              <img
+                src="../images/1500617216838965590.jpg"
+                width="288"
+                height="288"
+                :alt="nameArr[5]"
+                :title="nameArr[5]"
+              />
+            </a>
+          </router-link>
           <a href="javascript:void(0)" target="_blank" class="small_link_txt">
             <span class="pro_tit">{{nameArr[5]}}</span>
             <br />
@@ -122,15 +135,17 @@
           </a>
         </div>
         <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../images/1507621834900057751.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[6]"
-              :title="nameArr[6]"
-            />
-          </a>
+          <router-link to="/details">
+            <a href="javascript:void(0)" target="_blank">
+              <img
+                src="../images/1507621834900057751.jpg"
+                width="288"
+                height="288"
+                :alt="nameArr[6]"
+                :title="nameArr[6]"
+              />
+            </a>
+          </router-link>
           <a href="javascript:void(0)" target="_blank" class="small_link_txt">
             <span class="pro_tit">{{nameArr[6]}}</span>
             <br />

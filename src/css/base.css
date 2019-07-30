@@ -6,7 +6,7 @@ select, input { vertical-align:middle;}
 textarea { resize:none; } /*防止拖动*/
 img {border:0; vertical-align:middle; }  
 table { border-collapse:collapse; }/*边框合并*/
-a {text-decoration:none; }
+a {text-decoration:none; color:#000;}
 
 *{box-sizing: border-box;}
 

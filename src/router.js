@@ -18,6 +18,12 @@ export default new Router({
       path: '/shopping',
       name: 'shopping',
       component: () => import('./views/Shopping.vue')
+    },
+    {
+      path: '/details',
+      name: 'details',
+      component: () => import('./views/Details.vue')
     }
   ]
 })
+
