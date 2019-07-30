@@ -2,6 +2,8 @@
   <div class="box">
       <!-- 顶部 -->
     <Header />
+    <!-- 右边悬框 -->
+    <Float />
     <!-- logo栏 -->
     <Logo />
     <!-- 导航栏 -->
@@ -20,12 +22,14 @@ import Header from "./components/Header.vue";
 import Logo from "./components/Logo.vue";
 import Nav from "./components/Nav.vue";
 import Footer from "./components/Footer.vue"
+import Float from "./components/Float.vue";
 export default {
   components: {
     Header,
     Logo,
     Nav,
-    Footer
+    Footer,
+    Float
   }
 };
 </script>

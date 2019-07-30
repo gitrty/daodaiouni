@@ -1,7 +1,7 @@
 // import './src/css/main.scss';
 
 import Vue from "vue";
-import store from "./src/store/";
+// import store from "./src/store/";
 import router from "./src/router";
 
 
@@ -18,6 +18,6 @@ import App from "./src/App.vue";
 
 new Vue({
     router,
-    store,
+    // store,
     render: h => h(App)
 }).$mount('#app');
