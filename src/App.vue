@@ -8,7 +8,7 @@
     <toyo-Logo />
     <!-- 导航栏 -->
     <toyo-Nav />
-    <!-- vue路由 Home/Shopping/ 组件-->
+    <!-- vue路由 Home/Shopping/... 组件-->
     <div>
       <router-view />
     </div>

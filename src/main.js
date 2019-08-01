@@ -17,7 +17,7 @@ Vue.use(toyo);
 import App from "./App.vue";
 
 new Vue({
-    router,
     store,
+    router,
     render: h => h(App)
 }).$mount('#app');

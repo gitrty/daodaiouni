@@ -20,12 +20,12 @@
               <em>{{mon}}</em> 元/克
             </span>
           </p>
-          <router-link to="/login">
-            <p @click="login">登录</p>
-          </router-link>
-          <router-link to="/regs">
-            <p @click="regs">注册</p>
-          </router-link>
+          <!-- <router-link to="/login"> -->
+          <p @click="login">登录</p>
+          <!-- </router-link> -->
+          <!-- <router-link to="/regs"> -->
+          <p @click="regs">注册</p>
+          <!-- </router-link> -->
         </div>
       </div>
     </div>
@@ -40,7 +40,14 @@ export default {
       mon: "348"
     };
   },
-  methods: mapActions(["login", "regs"])
+  methods: {
+    login() {
+      this.$router.push("/login");
+    },
+    regs() {
+      this.$router.push("/regs");
+    }
+  }
 };
 </script>
 

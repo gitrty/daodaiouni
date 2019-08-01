@@ -2,7 +2,10 @@
 module.exports = function (env, argv) {
     env = env || env.development;
     return {
-        entry: "./src/main.js",
+        // entry: "./src/main.js",
+        entry: {
+            app: ["babel-polyfill", "./src/main.js"]
+        },
         module: {
             rules: [
                 {

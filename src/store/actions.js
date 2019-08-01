@@ -30,7 +30,6 @@ export default {
         Vue.prototype.animate_slow(smallImg, { left: mX, top: mY, opacity: 0 }, () => {
             smallImg.style.display = 'none';
         });
-
-    },
+    }
 
 }

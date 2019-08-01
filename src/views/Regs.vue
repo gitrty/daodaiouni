@@ -30,7 +30,7 @@
         </el-form-item>
       </el-form>
       <!-- left-bottom2 -->
-      <el-form ref="form2" :model="form2" label-width="100px" v-show="tabreg2">
+      <el-form ref="form2" :model="form2" label-width="100px" v-show="!tabreg">
         <el-form-item label="邮箱">
           <el-input v-model="form2.uname" placeholder="请输入邮箱"></el-input>
         </el-form-item>
@@ -92,7 +92,6 @@ export default {
       },
       code: "1234",
       tabreg: true,
-      tabreg2: false,
       tabstyle1: {
         "background-position": "134px 224px"
       },
@@ -142,7 +141,6 @@ export default {
         "background-position": "0px 224px"
       };
       this.tabreg = true;
-      this.tabreg2 = false;
     },
     change2() {
       this.tabstyle1 = {
@@ -152,7 +150,6 @@ export default {
         "background-position": "0px 269px"
       };
       this.tabreg = false;
-      this.tabreg2 = true;
     }
   },
   mounted() {
@@ -187,21 +184,21 @@ export default {
       }
       if (ev.keyCode == 9) {
         this.tabreg = !this.tabreg;
-        this.tabreg2 = !this.tabreg2;
-        this.tabreg
-          ? (this.tabstyle1 = {
-              "background-position": "134px 224px"
-            })
-          : (this.tabstyle2 = {
-              "background-position": "0px 269px"
-            });
-        this.tabreg2
-          ? (this.tabstyle1 = {
-              "background-position": "134px 269px"
-            })
-          : (this.tabstyle2 = {
-              "background-position": "0px 224px"
-            });
+        if (this.tabreg) {
+          this.tabstyle1 = {
+            "background-position": "134px 224px"
+          };
+          this.tabstyle2 = {
+            "background-position": "0px 224px"
+          };
+        } else {
+          this.tabstyle1 = {
+            "background-position": "134px 269px"
+          };
+          this.tabstyle2 = {
+            "background-position": "0px 269px"
+          };
+        }
       }
     };
   }

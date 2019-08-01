@@ -25,14 +25,20 @@ export default new Router({
       component: () => import('../views/Details.vue')
     },
     {
-      path:'/login',
-      name:'login',
-      component:()=>import('../views/Login.vue')
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/Login.vue')
     },
     {
-      path:'/regs',
-      name:'regs',
-      component:()=>import('../views/Regs.vue')
+      path: '/regs',
+      name: 'regs',
+      component: () => import('../views/Regs.vue')
+    },
+    // 路径输入错误 跳转 首页
+    {
+      path: '*',
+      name: 'page404',
+      component: Home
     }
   ]
 })
