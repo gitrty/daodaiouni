@@ -39,6 +39,13 @@ module.exports = function (env, argv) {
                         options: {
                             presets: [
                                 '@babel/preset-env'
+                            ],
+                            plugins: [
+                                ["import", {
+                                    "libraryName": "elementui",
+                                    "libraryDirectory": "es",
+                                    "style": true
+                                }]
                             ]
                         }
                     }

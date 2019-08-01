@@ -181,7 +181,7 @@
         </div>
         <div class="select_bt">
           <input type="hidden" id="goods_id" name="goods_id" value="20461651" />
-          <a class="cart_bt" id="cart_bt" href="javascript:void(0)">加入购物车</a>
+          <a class="cart_bt" id="cart_bt" href="javascript:void(0)" @click="addshop">加入购物车</a>
           <a class="gm_bt" href="javascript:void(0)">立即购买</a>
           <a class="gray_bt" href="/goods/20783955.html">专属定制</a>
           <a class="gray_zx_bt" href="javascript:void(0)">
@@ -200,19 +200,16 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
 export default {
   data() {
     return {
       fangda_img: require("../images/fd0.jpg"),
-      falg: false,
       cite_msg: "-请选择-"
     };
   },
-  methods: {
-    show() {
-      this.falg = !this.falg;
-    }
-  },
+  methods: mapActions(["show", "addshop"]),
+  computed: mapGetters(["falg"]),
   mounted() {
     //   切换小星星颜色
     document.querySelector(".jiaru").onmouseenter = () => {
@@ -336,7 +333,7 @@ export default {
     let uList = document.getElementById("divselect").querySelectorAll("ul>li");
     uList.forEach(el => {
       el.onclick = () => {
-        this.falg = false;
+        this.$store.state.falg = false;
         let msg = el.children[0].innerHTML;
         document.querySelector(".ocite").innerHTML = msg;
       };
@@ -380,7 +377,7 @@ export default {
         height: 153px;
         right: 26px;
         top: 26px;
-        z-index: 60;
+        z-index: 5;
       }
       .con-FangDa {
         width: 602px;

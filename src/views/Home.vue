@@ -56,6 +56,9 @@ import Dzzt from "../components/Dzzt.vue";
 import Zszs from "../components/Zszs.vue";
 import News from "../components/News.vue"
 export default {
+  mounted(){
+document.documentElement.scrollTop = 0;
+  },
   components: {
     Banner,
     Screen,

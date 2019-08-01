@@ -23,6 +23,16 @@ export default new Router({
       path: '/details',
       name: 'details',
       component: () => import('./views/Details.vue')
+    },
+    {
+      path:'/login',
+      name:'login',
+      component:()=>import('./views/Login.vue')
+    },
+    {
+      path:'/regs',
+      name:'regs',
+      component:()=>import('./views/Regs.vue')
     }
   ]
 })

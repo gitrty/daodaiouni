@@ -1,10 +1,10 @@
 <template>
-  <div class="nav">
+  <div class="nav" id='nav'>
     <div class="nav-con">
       <!-- 导航栏 -->
       <div class="nav-l">
         <ul>
-          <li>首页</li>
+          <li @click="gohome">首页</li>
           <li>钻石</li>
           <li>婚戒</li>
           <li>对戒</li>
@@ -25,7 +25,7 @@
         <!-- shopping路由 -->
         <router-link to="/shopping">
           <span>
-            <em>{{shopping_num}}</em>
+            <em v-show='shopnum'>{{shopnum}}</em>
           </span>
         </router-link>
         <span></span>
@@ -69,10 +69,10 @@
 </template>
 
 <script>
+import {mapGetters} from "vuex";
 export default {
   data() {
     return {
-      shopping_num: 0,
       sub_menu: [
         ["钻石", "30分裸钻", "50分裸钻", "70分裸钻", "克拉钻", "探索全部钻石"],
         ["形状", "圆形", "心形", "水滴形", "公主方", "祖母绿"],
@@ -183,8 +183,17 @@ export default {
       ]
     };
   },
+  methods:{
+    gohome(){
+      this.$router.push('/')
+    }
+  },
+  computed:mapGetters([
+    'shopnum'
+  ]),
   // js实现导航栏 sticky 粘性定位
   mounted() {
+
     let oNav = document.querySelector(".nav");
     let mY = oNav.offsetTop;
     window.addEventListener("scroll", () => {
@@ -194,11 +203,11 @@ export default {
         document.body.scrollTop;
       if (scrollTop > mY) {
         oNav.style.position = "fixed";
-        document.querySelector(".banner").style.marginTop =
-          oNav.offsetHeight + "px";
+        document.querySelector(".logo").style.marginBottom =
+          44 + "px";
       } else {
         oNav.style.position = "static";
-        document.querySelector(".banner").style.marginTop = 0;
+        document.querySelector(".logo").style.marginBottom = 0;
       }
     });
     // 导航颜色切换
@@ -253,6 +262,7 @@ export default {
   top: 0;
   position: relative;
   z-index: 10;
+  border-bottom: 1px solid #dfdfdf;
   .nav-con {
     position: relative;
     width: 1200px;
@@ -260,6 +270,7 @@ export default {
     // background-color: pink;
     margin: 0 auto;
     background-color: #fff;
+  border-bottom: 1px solid #dfdfdf;
     .nav-l {
       font-size: 16px;
       ul {
@@ -367,7 +378,7 @@ export default {
   z-index: 2;
   background: #fff;
   left: 0px;
-  border-top: 1px solid #dfdfdf;
+  // border-top: 1px solid #dfdfdf;
   .sub-menu-con {
     padding: 30px 0 30px 32px;
     width: 1200px;

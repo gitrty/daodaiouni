@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="header">
     <!-- 顶部导航 -->
     <div class="top">
       <div class="con">
@@ -20,8 +20,12 @@
               <em>{{mon}}</em> 元/克
             </span>
           </p>
-          <p>登录</p>
-          <p>注册</p>
+          <router-link to="/login">
+            <p @click="login">登录</p>
+          </router-link>
+          <router-link to="/regs">
+            <p @click="regs">注册</p>
+          </router-link>
         </div>
       </div>
     </div>
@@ -29,12 +33,14 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   data() {
     return {
       mon: "348"
     };
-  }
+  },
+  methods: mapActions(["login", "regs"])
 };
 </script>
 

@@ -26,6 +26,9 @@ import Loupe from "../components/Loupe.vue";
 import Spcs from "../components/Spcs.vue";
 import Review from "../components/Review.vue";
 export default {
+  mounted() {
+    document.documentElement.scrollTop = 0;
+  },
   components: {
     Loupe,
     Spcs,

@@ -1,5 +1,5 @@
 <template>
-  <div class="logo">
+  <div class="logo" id="logo">
     <div class="logo-con">
       <!-- Home 路由 -->
         <router-link to='/'><img src="../images/logo.jpg"></router-link>

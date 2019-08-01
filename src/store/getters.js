@@ -1,11 +1,8 @@
 export default {
-    count(state) {
-        return state.count;
+    shopnum(state){
+        return state.shopnum;
     },
-    arr(state){
-        return state.arr;
-    },
-    inWeather(state){
-        return state.inWeather;
+    falg(state){
+        return state.falg;
     }
 }

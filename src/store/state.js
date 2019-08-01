@@ -1,5 +1,4 @@
 export default {
-    count: 0,
-    arr:[],
-    inWeather:''
+    shopnum:0,
+    falg:false
 }

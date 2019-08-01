@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div id="box">
       <!-- 顶部 -->
     <Header />
     <!-- 右边悬框 -->
@@ -7,7 +7,7 @@
     <!-- logo栏 -->
     <Logo />
     <!-- 导航栏 -->
-    <!-- <Nav /> -->
+    <Nav />
     <!-- vue路由 Home/Shopping/ 组件-->
     <div>
       <router-view />

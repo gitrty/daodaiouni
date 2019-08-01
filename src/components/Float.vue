@@ -14,11 +14,18 @@
         <img src="../images/kefu_top.gif" style="cursor: pointer;" />
       </a>
     </div>
-    <div class="love_quick_cort">
-      <span id="right_goods_sum" class="right_goods_sum" style="display: inline;">2</span>
-      <a rel="nofollow" href="javascript:void(0)" id="right_cart" class="love_quick2"></a>
-      <div class="love_quick_word" style="  ">购物车</div>
-    </div>
+    <router-link to="/shopping">
+      <div class="love_quick_cort " >
+        <span
+          id="right_goods_sum"
+          class="right_goods_sum"
+          style="display: inline;"
+          v-show="shopnum"
+        >{{shopnum}}</span>
+        <a rel="nofollow" href="javascript:void(0)" id="right_cart" class="love_quick2"></a>
+        <div class="love_quick_word" style="  ">购物车</div>
+      </div>
+    </router-link>
     <div class="love_quick_cort">
       <a rel="nofollow" href="javascript:void(0)" class="love_quick3"></a>
       <div class="love_quick_word" style="right: 0px; ">QQ咨询</div>
@@ -44,12 +51,17 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
+  data() {
+    return {};
+  },
   methods: {
     totop() {
       document.documentElement.scrollTop = 0;
     }
   },
+  computed: mapGetters(["shopnum"]),
   mounted() {
     let oList = document.querySelectorAll(".love_quick_cort");
     let divs = document.querySelectorAll(".love_quick_word");
@@ -72,7 +84,7 @@ export default {
 
 <style lang="scss" scoped>
 .love_quickservice {
-  a {
+  .love_quick2,.love_quick3,.love_quick4,.love_quick5{
     display: inline-block;
     background-image: url(../images/kefu_bg.png);
     background-repeat: no-repeat;
@@ -225,6 +237,9 @@ export default {
     background-position: -48.5px 0px;
   }
 }
+// .nonebgimg{
+//   background-image:none;
+// }
 </style>
 
 
