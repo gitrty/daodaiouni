@@ -13,26 +13,18 @@
       </div>
     </div>
     <!-- 商品详情 / 放大镜 -->
-    <Loupe />
+    <toyo-Loupe />
     <!-- 商品参数 -->
-    <Spcs />
+    <toyo-Spcs />
     <!-- 用户评价 -->
-    <Review />
+    <toyo-Review />
   </div>
 </template>
 
 <script>
-import Loupe from "../components/Loupe.vue";
-import Spcs from "../components/Spcs.vue";
-import Review from "../components/Review.vue";
 export default {
   mounted() {
     document.documentElement.scrollTop = 0;
-  },
-  components: {
-    Loupe,
-    Spcs,
-    Review
   }
 };
 </script>

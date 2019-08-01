@@ -172,7 +172,19 @@ export default {
     createCode();
     // TAB键切换注册方式
     window.onkeydown = ev => {
-      ev.preventDefault();
+      // 阻止 键盘Tab键 默认行为,解决阻止默认行为后input框无法输出
+      let tar = ev.target;
+      while (tar.nodeType != 1) {
+        tar = tar.parentNode;
+      }
+      if (
+        tar.tagName != "SELECT" &&
+        tar.tagName != "INPUT" &&
+        tar.tagName != "TEXTAREA" &&
+        tar.tagName != "A"
+      ) {
+        ev.preventDefault();
+      }
       if (ev.keyCode == 9) {
         this.tabreg = !this.tabreg;
         this.tabreg2 = !this.tabreg2;

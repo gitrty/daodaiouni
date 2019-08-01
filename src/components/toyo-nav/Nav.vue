@@ -85,7 +85,7 @@ export default {
           "钻石证书"
         ]
       ],
-      imgUrl: require("../images/menu_banner01.jpg"),
+      imgUrl: require("../../images/menu_banner01.jpg"),
       menu_info: [
         [
           [
@@ -229,7 +229,7 @@ export default {
           // 切换menu栏图片
           menuImg.setAttribute(
             "src",
-            require(`../images/menu_banner0${index}.jpg`)
+            require(`../../images/menu_banner0${index}.jpg`)
           );
           // 切换menu文字内容
           this.sub_menu = this.menu_info[index - 1];
@@ -320,7 +320,7 @@ export default {
         width: 30px;
         border: none;
         height: 28px;
-        background: url(../images/bg.png) no-repeat -22px -14px;
+        background: url(../../images/bg.png) no-repeat -22px -14px;
         &:hover {
           background-position: -22px -54px;
         }
@@ -340,7 +340,7 @@ export default {
         width: 38px;
         height: 38px;
         background-repeat: no-repeat;
-        background-image: url(../images/bg.png);
+        background-image: url(../../images/bg.png);
       }
       span {
         position: relative;

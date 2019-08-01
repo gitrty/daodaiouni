@@ -4,7 +4,7 @@
       <div class="pinpai hight_light">
         <a href="javascript:void(0)" target="_blank">
           <img
-            src="../images/pinpai1.jpg"
+            src="../../images/pinpai1.jpg"
             alt="钻石知识"
             title="钻石知识"
             width="501"
@@ -16,14 +16,14 @@
         <div class="knowledge_top">
           <div class="kl_top_txt">品牌故事</div>
           <div style="text-align:center">
-            <img src="../images/zuanjia.jpg" alt="品牌故事" title="品牌故事" />
+            <img src="../../images/zuanjia.jpg" alt="品牌故事" title="品牌故事" />
           </div>
           <div class="kl_top_desc">超值的价格 买上乘的钻石</div>
         </div>
         <span class="hight_light">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/pinpai2.jpg"
+              src="../../images/pinpai2.jpg"
               width="683"
               height="474"
               alt="超值的价格 买上乘的钻石"

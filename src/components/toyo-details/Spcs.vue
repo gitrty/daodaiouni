@@ -52,109 +52,109 @@
       <div class="goods_con">
         <p >
           <img
-            src="../images/190517_01.jpg"
+            src="../../images/190517_01.jpg"
             width="790"
             height="1330"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"
           />
           <img
-            src="../images/190517_02.jpg"
+            src="../../images/190517_02.jpg"
             width="790"
             height="535"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"
           />
           <img
-            src="../images/190517_03.jpg"
+            src="../../images/190517_03.jpg"
             width="790"
             height="653"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"
           />
           <img
-            src="../images/190517_04.jpg"
+            src="../../images/190517_04.jpg"
             width="790"
             height="934"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"
           />
           <img
-            src="../images/190517_05.jpg"
+            src="../../images/190517_05.jpg"
             width="790"
             height="1292"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"
           />
           <img
-            src="../images/190517_06.jpg"
+            src="../../images/190517_06.jpg"
             width="790"
             height="1347"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"
           />
           <img
-            src="../images/190517_07.jpg"
+            src="../../images/190517_07.jpg"
             width="790"
             height="1035"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"
           />
           <img
-            src="../images/190517_08.jpg"
+            src="../../images/190517_08.jpg"
             width="790"
             height="1226"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"
           />
           <img
-            src="../images/190517_09.jpg"
+            src="../../images/190517_09.jpg"
             width="790"
             height="1104"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"
           />
           <img
-            src="../images/190517_10.jpg"
+            src="../../images/190517_10.jpg"
             width="790"
             height="675"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"
           />
           <img
-            src="../images/190517_11.jpg"
+            src="../../images/190517_11.jpg"
             width="790"
             height="756"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"
           />
           <img
-            src="../images/190517_12.jpg"
+            src="../../images/190517_12.jpg"
             width="790"
             height="1125"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"
           />
           <img
-            src="../images/190517_13.jpg"
+            src="../../images/190517_13.jpg"
             width="790"
             height="962"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"
           />
           <img
-            src="../images/190517_14.jpg"
+            src="../../images/190517_14.jpg"
             width="790"
             height="925"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"
           />
           <img
-            src="../images/190517_15.jpg"
+            src="../../images/190517_15.jpg"
             width="790"
             height="964"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"
           />
           <img
-            src="../images/190517_16.jpg"
+            src="../../images/190517_16.jpg"
             width="790"
             height="805"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"
           />
           <img
-            src="../images/190517_17.jpg"
+            src="../../images/190517_17.jpg"
             width="790"
             height="826"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"
           />
           <img
-            src="../images/190517_18.jpg"
+            src="../../images/190517_18.jpg"
             width="790"
             height="800"
             alt="恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列"

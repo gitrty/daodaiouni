@@ -1,7 +1,7 @@
 import Vue from 'vue';
 export default {
     increment: ({ commit, state, getters }) => {
-        commit('increment_fun');
+        
     },
     show: ({ commit, state, getters }) => {
         state.falg = !state.falg;
@@ -32,20 +32,5 @@ export default {
         });
 
     },
-    login: ({ state }) => {
-        // let Header = document.getElementById('header');
-        // let Float = document.getElementById('dr-quickservice');
-        // let Logo = document.getElementById('logo');
-        // let Nav = document.getElementById('nav');
-        // let Footer = document.getElementById('footer');
-        // Header.style.display = 'none';
-        // Float.style.display = 'none';
-        // Logo.style.display = 'none';
-        // Nav.style.display = 'none';
-        // Footer.style.display = 'none';
-    },
-    regs: () => {
-
-    }
 
 }

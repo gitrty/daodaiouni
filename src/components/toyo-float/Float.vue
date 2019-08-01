@@ -11,7 +11,7 @@
     </div>
     <div class="droline_kf">
       <a href="javascript:void(0);">
-        <img src="../images/kefu_top.gif" style="cursor: pointer;" />
+        <img src="../../images/kefu_top.gif" style="cursor: pointer;" />
       </a>
     </div>
     <router-link to="/shopping">
@@ -26,7 +26,7 @@
         <div class="love_quick_word" style="  ">购物车</div>
       </div>
     </router-link>
-    <div class="love_quick_cort">
+    <div class="love_quick_cort" @click="goDetails">
       <a rel="nofollow" href="javascript:void(0)" class="love_quick3"></a>
       <div class="love_quick_word" style="right: 0px; ">QQ咨询</div>
     </div>
@@ -36,7 +36,7 @@
         class="love_quick_word quick_ewm"
         style="right: 0px;width:104px;height:140px;padding:6px;  "
       >
-        <img src="../images/erweima.jpg" alt="移动版二维码" />
+        <img src="../../images/erweima.jpg" alt="移动版二维码" />
       </div>
     </div>
     <div class="love_quick_cort">
@@ -59,6 +59,10 @@ export default {
   methods: {
     totop() {
       document.documentElement.scrollTop = 0;
+    },
+    // 暂时将qq挂到详情页,开发完成后删除
+    goDetails(){
+      this.$router.push('/details');
     }
   },
   computed: mapGetters(["shopnum"]),
@@ -86,7 +90,7 @@ export default {
 .love_quickservice {
   .love_quick2,.love_quick3,.love_quick4,.love_quick5{
     display: inline-block;
-    background-image: url(../images/kefu_bg.png);
+    background-image: url(../../images/kefu_bg.png);
     background-repeat: no-repeat;
     margin: 0 auto;
     margin-top: 8px;
@@ -106,7 +110,7 @@ export default {
     width: 220px;
     height: 80px;
     display: none;
-    background: url(../images/tc_border.png) no-repeat;
+    background: url(../../images/tc_border.png) no-repeat;
     z-index: 10000;
     a {
       display: inline-block;
@@ -129,7 +133,7 @@ export default {
       display: inline-block;
       right: 10px;
       top: -10px;
-      background: url(../images/tc_close.png) no-repeat;
+      background: url(../../images/tc_close.png) no-repeat;
       transition: 0.2s;
     }
   }
@@ -144,7 +148,7 @@ export default {
   margin-bottom: 26px;
   a {
     display: inline-block;
-    background-image: url(../images/kefu_bg.png);
+    background-image: url(../../images/kefu_bg.png);
     background-repeat: no-repeat;
     margin: 0 auto;
     margin-top: 8px;
@@ -228,7 +232,7 @@ export default {
   }
 }
 .love_quickservice a.to-top {
-  background: url(../images/go_top.png) no-repeat;
+  background: url(../../images/go_top.png) no-repeat;
   background-position: 1px 0px;
   width: 50px;
   height: 50px;

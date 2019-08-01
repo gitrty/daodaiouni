@@ -1,9 +1,9 @@
 <template>
   <div class="banner">
-    <img src="../images/banner0.jpg" alt />
-    <img src="../images/banner1.jpg" alt />
-    <img src="../images/banner2.jpg" alt />
-    <img src="../images/banner3.jpg" alt />
+    <img src="../../images/banner0.jpg" alt />
+    <img src="../../images/banner1.jpg" alt />
+    <img src="../../images/banner2.jpg" alt />
+    <img src="../../images/banner3.jpg" alt />
     <ul class="ban-min">
       <li class="current"></li>
       <li></li>
@@ -143,14 +143,14 @@ export default {
   }
   .next {
     margin-left: 482px;
-    background: url(../images/next_54.png) no-repeat left top;
+    background: url(../../images/next_54.png) no-repeat left top;
     &:hover {
       background-position: right top;
     }
   }
   .prev {
     margin-left: -527px;
-    background: url(../images/prev_54.png) no-repeat left top;
+    background: url(../../images/prev_54.png) no-repeat left top;
     &:hover {
       background-position: right top;
     }

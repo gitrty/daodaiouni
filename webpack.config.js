@@ -2,7 +2,7 @@
 module.exports = function (env, argv) {
     env = env || env.development;
     return {
-        entry: "./main.js",
+        entry: "./src/main.js",
         module: {
             rules: [
                 {

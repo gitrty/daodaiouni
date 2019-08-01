@@ -200,7 +200,7 @@ export default {
   line-height: 27px;
   margin-right: 9px;
 //   display: inline;
-  background: url(../images/dia_searh_arrow.png);
+  background: url(../../images/dia_searh_arrow.png);
   background-position: right bottom;
   background-repeat: no-repeat;
   text-align: left;
@@ -269,7 +269,7 @@ export default {
       color: #666;
       font-size: 12px;
       i {
-        background: url(../images/shape.png);
+        background: url(../../images/shape.png);
         background-repeat: no-repeat;
         width: 60px;
         height: 60px;
@@ -323,7 +323,7 @@ export default {
 
   .nct {
     box-sizing: content-box;
-    background: url(../images/ct.jpg);
+    background: url(../../images/ct.jpg);
     background-repeat: no-repeat;
     height: 25px;
     padding: 0px;
@@ -338,7 +338,7 @@ export default {
     line-height: 25px;
   }
   .rmb {
-    background: url(../images/rmb.jpg);
+    background: url(../../images/rmb.jpg);
     background-repeat: no-repeat;
   }
   .n_wid46 {
@@ -348,7 +348,7 @@ export default {
       width: 46px;
       display: block;
       height: 27px;
-      background: url(../images/dia_searh.jpg);
+      background: url(../../images/dia_searh.jpg);
       background-position: 5px 0px;
       background-repeat: no-repeat;
     }

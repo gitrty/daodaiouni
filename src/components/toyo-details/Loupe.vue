@@ -5,7 +5,7 @@
       <div class="loupe-l">
         <!-- 特惠 -->
         <div class="goods_attach_ico">
-          <img src="../images/3.png" width="153" height="153" />
+          <img src="../../images/3.png" width="153" height="153" />
         </div>
         <!-- 放大镜 -->
         <div class="con-FangDa" id="fangdajing">
@@ -28,19 +28,19 @@
           </div>
           <ul class="con-FangDa-ImgList">
             <li style="margin-right:8px;">
-              <img src="../images/fd0.jpg" />
+              <img src="../../images/fd0.jpg" />
             </li>
             <li style="margin-right:8px;">
-              <img src="../images/fd1.jpg" />
+              <img src="../../images/fd1.jpg" />
             </li>
             <li style="margin-right:8px;">
-              <img src="../images/fd2.jpg" />
+              <img src="../../images/fd2.jpg" />
             </li>
             <li style="margin-right:8px;">
-              <img src="../images/fd3.jpg" />
+              <img src="../../images/fd3.jpg" />
             </li>
             <li>
-              <img src="../images/fd4.jpg" />
+              <img src="../../images/fd4.jpg" />
             </li>
           </ul>
         </div>
@@ -59,7 +59,7 @@
               <a href="javascript:void(0);">
                 <!-- 小星星 -->
                 <div class="start_d">
-                  <img id="star_img" src="../images/s1.png" width="16" height="16" />
+                  <img id="star_img" src="../../images/s1.png" width="16" height="16" />
                 </div>
                 <div class="jiaru">
                   加入收藏（
@@ -204,7 +204,7 @@ import { mapActions, mapGetters } from "vuex";
 export default {
   data() {
     return {
-      fangda_img: require("../images/fd0.jpg"),
+      fangda_img: require("../../images/fd0.jpg"),
       cite_msg: "-请选择-"
     };
   },
@@ -215,7 +215,7 @@ export default {
     document.querySelector(".jiaru").onmouseenter = () => {
       document
         .querySelector("#star_img")
-        .setAttribute("src", require("../images/s2.png"));
+        .setAttribute("src", require("../../images/s2.png"));
       this.animate_slow(document.querySelector("#star_img"), {
         width: 22,
         height: 22,
@@ -226,7 +226,7 @@ export default {
     document.querySelector(".jiaru").onmouseleave = () => {
       document
         .querySelector("#star_img")
-        .setAttribute("src", require("../images/s1.png"));
+        .setAttribute("src", require("../../images/s1.png"));
       this.animate_slow(document.querySelector("#star_img"), {
         width: 16,
         height: 16,
@@ -247,7 +247,7 @@ export default {
         });
         el.classList.add("active");
         // 切换中图片
-        this.fangda_img = require(`../images/fd${index}.jpg`);
+        this.fangda_img = require(`../../images/fd${index}.jpg`);
       };
     });
     // 放大镜
@@ -575,7 +575,7 @@ export default {
     }
     a.cur {
       border: 1px solid #dc393e;
-      background: url(../images/shop_select_bg.png) right bottom no-repeat;
+      background: url(../../images/shop_select_bg.png) right bottom no-repeat;
     }
   }
 
@@ -638,7 +638,7 @@ export default {
         padding-left: 10px;
         // padding-right: 24px;
         border: 1px solid #eee;
-        background: url(../images/xjt.png) no-repeat right center;
+        background: url(../../images/xjt.png) no-repeat right center;
         font-size: 14px;
         height: 34px;
         line-height: 34px;
@@ -791,7 +791,7 @@ export default {
       i {
         width: 19px;
         height: 17px;
-        background: url(../images/home.jpg);
+        background: url(../../images/home.jpg);
         margin-left: 40px;
         margin-right: 10px;
         float: left;

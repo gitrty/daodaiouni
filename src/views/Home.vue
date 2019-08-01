@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 轮播图 -->
-    <Banner />
+    <toyo-Banner />
     <!-- GIA定制三部曲 -->
     <div class="gia">
       <div class="gia-con">
@@ -30,43 +30,27 @@
       </div>
     </div>
     <!-- 筛选搜索 -->
-    <Screen />
+    <toyo-Screen />
     <!-- 系列产品 -->
     <div class="level">
       <div class="level-con">系列产品</div>
     </div>
-    <Xlcp />
+    <toyo-Xlcp />
     <!-- 热销推荐 -->
-    <Rxtj />
+    <toyo-Rxtj />
     <!-- 定制钻托 -->
-    <Dzzt />
+    <toyo-Dzzt />
     <!-- 钻石知识 / 品牌故事 -->
-    <Zszs />
+    <toyo-Zszs />
     <!-- 资讯栏 -->
-    <News />
+    <toyo-News />
   </div>
 </template>
 
 <script>
-import Banner from "../components/Banner.vue";
-import Screen from "../components/Screen.vue";
-import Xlcp from "../components/Xlcp.vue";
-import Rxtj from "../components/Rxtj.vue";
-import Dzzt from "../components/Dzzt.vue";
-import Zszs from "../components/Zszs.vue";
-import News from "../components/News.vue"
 export default {
-  mounted(){
-document.documentElement.scrollTop = 0;
-  },
-  components: {
-    Banner,
-    Screen,
-    Xlcp,
-    Rxtj,
-    Dzzt,
-    Zszs,
-    News
+  mounted() {
+    document.documentElement.scrollTop = 0;
   }
 };
 </script>

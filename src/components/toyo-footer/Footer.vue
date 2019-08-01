@@ -5,31 +5,31 @@
       <div class="foo-top">
         <div class="foo-top-con">
           <a href="javascript:void(0)">
-            <img src="../images/foo1.jpg" alt />
+            <img src="../../images/foo1.jpg" alt />
           </a>
           <p>包邮低价</p>
         </div>
         <div class="foo-top-con">
           <a href="javascript:void(0)">
-            <img src="../images/foo2.jpg" alt />
+            <img src="../../images/foo2.jpg" alt />
           </a>
           <p>全国联保</p>
         </div>
         <div class="foo-top-con">
           <a href="javascript:void(0)">
-            <img src="../images/foo3.jpg" alt />
+            <img src="../../images/foo3.jpg" alt />
           </a>
           <p>商品终身保养</p>
         </div>
         <div class="foo-top-con">
           <a href="javascript:void(0)">
-            <img src="../images/foo4.jpg" alt />
+            <img src="../../images/foo4.jpg" alt />
           </a>
           <p>一钻双证</p>
         </div>
         <div class="foo-top-con">
           <a href="javascript:void(0)">
-            <img src="../images/foo5.jpg" alt />
+            <img src="../../images/foo5.jpg" alt />
           </a>
           <p>15天免费退换</p>
         </div>
@@ -116,14 +116,14 @@
           <!-- 2 -->
           <div class="weixin">
             <div>
-              <img src="../images/weixin.jpg" />
+              <img src="../../images/weixin.jpg" />
             </div>
             <div class="wei_txt">官方微信</div>
           </div>
           <!-- 3 -->
           <div class="weibo">
             <div>
-              <img src="../images/weibo.jpg?v=1" />
+              <img src="../../images/weibo.jpg?v=1" />
             </div>
             <div class="wei_txt">微信小程序</div>
           </div>
@@ -333,7 +333,7 @@ export default {
               font-family: "宋体";
               font-size: 14px;
               display: block;
-              background: url(../images/say.jpg);
+              background: url(../../images/say.jpg);
               background-repeat: no-repeat;
               padding-left: 55px;
               line-height: 27px;

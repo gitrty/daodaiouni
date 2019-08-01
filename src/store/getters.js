@@ -4,5 +4,8 @@ export default {
     },
     falg(state){
         return state.falg;
+    },
+    shopprice(state){
+        return state.shopprice;
     }
 }

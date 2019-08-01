@@ -7,7 +7,7 @@
           <a href="javascript:void(0)" target="_blank">更多&gt;&gt;</a>
         </div>
         <div class="news_index_img">
-          <img src="../images/news_img1.jpg" width="340" height="210" alt="钻石学堂" title="钻石学堂" />
+          <img src="../../images/news_img1.jpg" width="340" height="210" alt="钻石学堂" title="钻石学堂" />
         </div>
         <ul class="index_news_list">
           <li>
@@ -168,7 +168,7 @@
           <a href="javascript:void(0)" target="_blank">更多&gt;&gt;</a>
         </div>
         <div class="news_index_img">
-          <img src="../images/news_img2.jpg" width="340" height="210" alt="钻石学堂" title="钻石学堂" />
+          <img src="../../images/news_img2.jpg" width="340" height="210" alt="钻石学堂" title="钻石学堂" />
         </div>
         <ul class="index_news_list">
           <li>
@@ -329,7 +329,7 @@
           <a href="javascript:void(0)" target="_blank">更多&gt;&gt;</a>
         </div>
         <div class="news_index_img">
-          <img src="../images/news_img3.jpg" width="340" height="210" alt="钻石学堂" title="钻石学堂" />
+          <img src="../../images/news_img3.jpg" width="340" height="210" alt="钻石学堂" title="钻石学堂" />
         </div>
         <ul class="index_news_list">
           <li>
@@ -550,7 +550,7 @@ export default {
   width: 100%;
   height: 851px;
   min-width: 1200px;
-  background: url(../images/news_bg2.png);
+  background: url(../../images/news_bg2.png);
   padding-top: 60px;
   font-size: 12px;
   .news-con {
@@ -576,7 +576,7 @@ export default {
         height: 19px;
         width: 340px;
         float: left;
-        background: url(../images/news_tit2.jpg);
+        background: url(../../images/news_tit2.jpg);
         background-position: left top;
         background-repeat: no-repeat;
         text-align: right;
@@ -637,12 +637,12 @@ export default {
     }
     .news_index_item:nth-of-type(2) {
       .news_index_tit2 {
-        background: url(../images/news_tit1.jpg) no-repeat;
+        background: url(../../images/news_tit1.jpg) no-repeat;
       }
     }
     .news_index_item:nth-of-type(3) {
       .news_index_tit2 {
-        background: url(../images/news_tit3.jpg) no-repeat;
+        background: url(../../images/news_tit3.jpg) no-repeat;
       }
     }
   }

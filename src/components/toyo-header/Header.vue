@@ -86,7 +86,7 @@ export default {
           position: absolute;
           z-index: 333;
           left: -20px;
-          background: #fff url(./../images/qrcode.png) no-repeat center;
+          background: #fff url(./../../images/qrcode.png) no-repeat center;
         }
       }
     }

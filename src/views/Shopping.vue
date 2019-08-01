@@ -71,7 +71,7 @@
                   </tbody>
                 </table>
               </td>
-              <td width="100">
+              <td width="100" v-text="'¥'+shopprice+'.00'">
                 ￥6299.00
                 <input type="hidden" id="good_price40359" value="6299.00" />
               </td>
@@ -82,13 +82,13 @@
                   <table align="center" width="76" border="0" cellspacing="0" cellpadding="0">
                     <tbody>
                       <tr>
-                        <td width="17" class="fc_jian">
+                        <td width="17" class="fc_jian" @click="decrement">
                           <a href="javascript:void(0);"></a>
                         </td>
                         <td width="42" align="center">
-                          <input class="fcsum" type="text" id="good_num40359" value="36" />
+                          <input class="fcsum" type="text" id="good_num40359" v-model="shopnum_2" />
                         </td>
-                        <td width="17" class="fc_jia">
+                        <td width="17" class="fc_jia" @click="shopnum_2++">
                           <a href="javascript:void(0);"></a>
                         </td>
                       </tr>
@@ -103,7 +103,7 @@
                 </span>
                 <br />
                 <span class="fc_del">
-                  <a class="tipsdel">删除</a>
+                  <a class="tipsdel" @click="delshop">删除</a>
                 </span>
               </td>
             </tr>
@@ -129,7 +129,7 @@
                   <td width="106">
                     <div align="left" class="sl_zongji">
                       数量总计：
-                      <span class="mcolor2" id="allgoodsnumber">36</span>件
+                      <span class="mcolor2" id="allgoodsnumber" v-text="shopnum_2"></span>件
                     </div>
                   </td>
                   <td width="65">
@@ -137,7 +137,11 @@
                   </td>
                   <td width="243">
                     <div align="left" class="m_zongji">
-                      <span class="font24 mcolor3" id="allgoodsamount">￥226764.00</span>
+                      <span
+                        class="font24 mcolor3"
+                        id="allgoodsamount"
+                        v-text="'¥'+shopprice*shopnum_2+'.00'"
+                      ></span>
                     </div>
                   </td>
                   <td width="176">
@@ -164,10 +168,27 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
-    mounted(){
-        document.documentElement.scrollTop = 0;
+  data() {
+    return {
+      shopnum_2: 0
+    };
+  },
+  methods: {
+    decrement() {
+      this.shopnum_2 > 0 ? this.shopnum_2-- : 0;
+    },
+    // 操作 - 删除 
+    delshop() {
+
     }
+  },
+  computed: mapGetters(["shopnum", "shopprice"]),
+  mounted() {
+    document.documentElement.scrollTop = 0;
+    this.shopnum_2 = this.shopnum;
+  }
 };
 </script>
 
@@ -278,7 +299,7 @@ table {
   color: #000000;
 }
 .cart_confirm {
-    // margin-bottom: 50px;
+  // margin-bottom: 50px;
   font-size: 12px;
   width: 964px;
   border: 1px solid #ebe4ba;
@@ -286,7 +307,7 @@ table {
   height: 70px;
   margin-top: 10px;
   padding-top: 12px;
-//   float: left;
+  //   float: left;
   .width946 {
     width: 946px;
     margin: auto;
@@ -327,6 +348,20 @@ table {
     color: #b32e18;
     font-size: 24px;
   }
+}
+.fc_del,
+.fc_sc {
+  a {
+    color: #999;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+      color: indianred;
+    }
+  }
+}
+.fc_sc > a {
+  color: #000;
 }
 </style>
 

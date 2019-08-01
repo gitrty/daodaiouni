@@ -3,12 +3,12 @@
     <div class="xlcp-con">
       <div class="xl-l">
         <a href="javascript:void(0)">
-          <img src="../images/a_level_p1.jpg" width="889" height="292" alt="真爱永恒系列" title="真爱永恒系列" />
+          <img src="../../images/a_level_p1.jpg" width="889" height="292" alt="真爱永恒系列" title="真爱永恒系列" />
         </a>
         <div class="xl-l-l">
           <a href="javascript:void(0)">
             <img
-              src="../images/a_level_p2.jpg"
+              src="../../images/a_level_p2.jpg"
               width="492"
               height="442"
               style="float: left;"
@@ -17,14 +17,14 @@
             />
           </a>
           <a href="javascript:void(0)" class="f-r">
-            <img src="../images/a_level_p3.jpg" width="381" height="442" alt="铭记系列" title="铭记系列" />
+            <img src="../../images/a_level_p3.jpg" width="381" height="442" alt="铭记系列" title="铭记系列" />
           </a>
         </div>
       </div>
       <div class="xl-r f-r">
         <a href="javascript:void(0)">
           <img
-            src="../images/a_level_p4.jpg"
+            src="../../images/a_level_p4.jpg"
             width="295"
             height="750"
             alt="爱守护加冕系列"

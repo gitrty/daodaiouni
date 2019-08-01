@@ -16,7 +16,7 @@
       <ul id="comment_list">
         <li class="comment_item" v-for="(cont,index) in review_info" :key="index">
           <div class="cm_u_ico">
-            <img src="../images/1.jpg" style="border-radius:20px;" width="40" height="40" />
+            <img src="../../images/1.jpg" style="border-radius:20px;" width="40" height="40" />
           </div>
           <div class="comment_con">
             <div class="comment_con_txt">
@@ -156,7 +156,7 @@ export default {
         .star_red {
           width: 15px;
           height: 14px;
-          background: url(../images/star_yellow.jpg);
+          background: url(../../images/star_yellow.jpg);
           display: block;
           float: left;
           margin-right: 2px;
@@ -184,7 +184,7 @@ export default {
         .star_red {
           width: 15px;
           height: 14px;
-          background: url(../images/star_yellow.jpg);
+          background: url(../../images/star_yellow.jpg);
           display: block;
           float: left;
           margin-right: 2px;
@@ -192,7 +192,7 @@ export default {
         .star_gray {
           width: 15px;
           height: 14px;
-          background: url(../images/star_gray.jpg);
+          background: url(../../images/star_gray.jpg);
           display: block;
           float: left;
           margin-right: 2px;
@@ -239,7 +239,7 @@ export default {
         .star_red {
           width: 15px;
           height: 14px;
-          background: url(../images/star_yellow.jpg);
+          background: url(../../images/star_yellow.jpg);
           display: block;
           float: left;
           margin-right: 2px;

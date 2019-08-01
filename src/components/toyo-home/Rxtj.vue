@@ -26,7 +26,7 @@
           <router-link to="/details">
             <a href="javascript:void(0)" target="_blank">
               <img
-                src="../images/1500616780447824288.jpg"
+                src="../../images/1500616780447824288.jpg"
                 width="592"
                 height="288"
                 :alt="nameArr[0]"
@@ -45,7 +45,7 @@
           <router-link to="/details">
             <a href="javascript:void(0)" target="_blank">
               <img
-                src="../images/1507630507958889089.jpg"
+                src="../../images/1507630507958889089.jpg"
                 width="288"
                 height="288"
                 :alt="nameArr[1]"
@@ -63,7 +63,7 @@
           <router-link to="/details">
             <a href="javascript:void(0)" target="_blank">
               <img
-                src="../images/1500616949483449841.jpg"
+                src="../../images/1500616949483449841.jpg"
                 width="288"
                 height="288"
                 :alt="nameArr[2]"
@@ -84,7 +84,7 @@
           <router-link to="/details">
             <a href="javascript:void(0)" target="_blank">
               <img
-                src="../images/1507630587747792085.jpg"
+                src="../../images/1507630587747792085.jpg"
                 width="288"
                 height="288"
                 :alt="nameArr[3]"
@@ -102,7 +102,7 @@
           <router-link to="/details">
             <a href="javascript:void(0)" target="_blank">
               <img
-                src="../images/1500617011079585423.jpg"
+                src="../../images/1500617011079585423.jpg"
                 width="288"
                 height="288"
                 :alt="nameArr[4]"
@@ -120,7 +120,7 @@
           <router-link to="/details">
             <a href="javascript:void(0)" target="_blank">
               <img
-                src="../images/1500617216838965590.jpg"
+                src="../../images/1500617216838965590.jpg"
                 width="288"
                 height="288"
                 :alt="nameArr[5]"
@@ -138,7 +138,7 @@
           <router-link to="/details">
             <a href="javascript:void(0)" target="_blank">
               <img
-                src="../images/1507621834900057751.jpg"
+                src="../../images/1507621834900057751.jpg"
                 width="288"
                 height="288"
                 :alt="nameArr[6]"
@@ -159,7 +159,7 @@
         <div class="big_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507626120997791493.jpg"
+              src="../../images/1507626120997791493.jpg"
               width="592"
               height="288"
               :alt="nameArr[0]"
@@ -175,7 +175,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507626186869808694.jpg"
+              src="../../images/1507626186869808694.jpg"
               width="288"
               height="288"
               :alt="nameArr[1]"
@@ -191,7 +191,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507626250892221225.jpg"
+              src="../../images/1507626250892221225.jpg"
               width="288"
               height="288"
               :alt="nameArr[2]"
@@ -210,7 +210,7 @@
         <div class="small_link" id="first-img">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507634133240632309.jpg"
+              src="../../images/1507634133240632309.jpg"
               width="288"
               height="288"
               :alt="nameArr[3]"
@@ -226,7 +226,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507634195823211283.jpg"
+              src="../../images/1507634195823211283.jpg"
               width="288"
               height="288"
               :alt="nameArr[4]"
@@ -242,7 +242,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507634241262344959.jpg"
+              src="../../images/1507634241262344959.jpg"
               width="288"
               height="288"
               :alt="nameArr[5]"
@@ -258,7 +258,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507634282586237753.jpg"
+              src="../../images/1507634282586237753.jpg"
               width="288"
               height="288"
               :alt="nameArr[6]"
@@ -278,7 +278,7 @@
         <div class="big_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1500616780447824288.jpg"
+              src="../../images/1500616780447824288.jpg"
               width="592"
               height="288"
               :alt="nameArr[0]"
@@ -294,7 +294,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507630507958889089.jpg"
+              src="../../images/1507630507958889089.jpg"
               width="288"
               height="288"
               :alt="nameArr[1]"
@@ -310,7 +310,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1500616949483449841.jpg"
+              src="../../images/1500616949483449841.jpg"
               width="288"
               height="288"
               :alt="nameArr[2]"
@@ -329,7 +329,7 @@
         <div class="small_link" id="first-img">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507630587747792085.jpg"
+              src="../../images/1507630587747792085.jpg"
               width="288"
               height="288"
               :alt="nameArr[3]"
@@ -345,7 +345,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1500617011079585423.jpg"
+              src="../../images/1500617011079585423.jpg"
               width="288"
               height="288"
               :alt="nameArr[4]"
@@ -361,7 +361,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1500617216838965590.jpg"
+              src="../../images/1500617216838965590.jpg"
               width="288"
               height="288"
               :alt="nameArr[5]"
@@ -377,7 +377,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507621834900057751.jpg"
+              src="../../images/1507621834900057751.jpg"
               width="288"
               height="288"
               :alt="nameArr[6]"
@@ -397,7 +397,7 @@
         <div class="big_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507626120997791493.jpg"
+              src="../../images/1507626120997791493.jpg"
               width="592"
               height="288"
               :alt="nameArr[0]"
@@ -413,7 +413,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507626186869808694.jpg"
+              src="../../images/1507626186869808694.jpg"
               width="288"
               height="288"
               :alt="nameArr[1]"
@@ -429,7 +429,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507626250892221225.jpg"
+              src="../../images/1507626250892221225.jpg"
               width="288"
               height="288"
               :alt="nameArr[2]"
@@ -448,7 +448,7 @@
         <div class="small_link" id="first-img">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507634133240632309.jpg"
+              src="../../images/1507634133240632309.jpg"
               width="288"
               height="288"
               :alt="nameArr[3]"
@@ -464,7 +464,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507634195823211283.jpg"
+              src="../../images/1507634195823211283.jpg"
               width="288"
               height="288"
               :alt="nameArr[4]"
@@ -480,7 +480,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507634241262344959.jpg"
+              src="../../images/1507634241262344959.jpg"
               width="288"
               height="288"
               :alt="nameArr[5]"
@@ -496,7 +496,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507634282586237753.jpg"
+              src="../../images/1507634282586237753.jpg"
               width="288"
               height="288"
               :alt="nameArr[6]"
@@ -516,7 +516,7 @@
         <div class="big_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1500616780447824288.jpg"
+              src="../../images/1500616780447824288.jpg"
               width="592"
               height="288"
               :alt="nameArr[0]"
@@ -532,7 +532,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507630507958889089.jpg"
+              src="../../images/1507630507958889089.jpg"
               width="288"
               height="288"
               :alt="nameArr[1]"
@@ -548,7 +548,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1500616949483449841.jpg"
+              src="../../images/1500616949483449841.jpg"
               width="288"
               height="288"
               :alt="nameArr[2]"
@@ -567,7 +567,7 @@
         <div class="small_link" id="first-img">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507630587747792085.jpg"
+              src="../../images/1507630587747792085.jpg"
               width="288"
               height="288"
               :alt="nameArr[3]"
@@ -583,7 +583,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1500617011079585423.jpg"
+              src="../../images/1500617011079585423.jpg"
               width="288"
               height="288"
               :alt="nameArr[4]"
@@ -599,7 +599,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1500617216838965590.jpg"
+              src="../../images/1500617216838965590.jpg"
               width="288"
               height="288"
               :alt="nameArr[5]"
@@ -615,7 +615,7 @@
         <div class="small_link">
           <a href="javascript:void(0)" target="_blank">
             <img
-              src="../images/1507621834900057751.jpg"
+              src="../../images/1507621834900057751.jpg"
               width="288"
               height="288"
               :alt="nameArr[6]"
