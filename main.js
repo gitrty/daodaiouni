@@ -13,18 +13,17 @@ import "./src/css/public.scss";
 import { Form, FormItem, Input, Checkbox, CheckboxGroup, Switch, Button, Tag } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 // Vue.use(ElementUI);
-Vue.use(Form);
-Vue.use(FormItem);
-Vue.use(Input);
-Vue.use(Checkbox);
-Vue.use(CheckboxGroup);
-Vue.use(Switch);
-Vue.use(Button);
-Vue.use(Tag);
+Vue.use(Form)
+    .use(FormItem)
+    .use(Input)
+    .use(Checkbox)
+    .use(CheckboxGroup)
+    .use(Switch)
+    .use(Button)
+    .use(Tag);
 
 
 import App from "./src/App.vue";
-
 
 new Vue({
     router,

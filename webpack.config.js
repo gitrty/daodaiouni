@@ -58,7 +58,7 @@ module.exports = function (env, argv) {
         // devServer: {
         //     historyApiFallback: { index: './index.html' }
         // },
-        devtool: 'source-map',
+        // devtool: 'source-map',
         ...env.production ? require("./config/webpack.production") : require('./config/webpack.development')
     }
 }
