@@ -56,12 +56,36 @@ export default {
     };
   },
   methods: {
+    // 登录验证
     onSubmit() {
-      console.log("submit!");
+      if (this.form.uname == "" || this.form.upwd == "") {
+        console.info("账号密码不能为空");
+      } else {
+        this.$axios
+          .post("http://127.0.0.1:8088/api/login", {
+            uname: this.form.uname,
+            upwd: this.form.upwd
+          })
+          .then(({ data }) => {
+            if (data.status == 1) {
+              // 登录成功
+              // 是否记住账号密码  (存储cookie)
+              if (this.form.delivery) {
+                // 上传账号密码到cookie
+                // ...
+              }
+              this.$router.push("/");
+              window.history.go(0);
+            } else {
+              //登录失败
+              console.info(data.msg);
+            }
+          });
+      }
     },
     onReg() {
       console.log("reg!");
-      this.$router.push('/regs');
+      this.$router.push("/regs");
     },
     wjpwd() {
       console.info("忘记密码!");

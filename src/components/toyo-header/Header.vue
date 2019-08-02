@@ -20,12 +20,10 @@
               <em>{{mon}}</em> 元/克
             </span>
           </p>
-          <!-- <router-link to="/login"> -->
-          <p @click="login">登录</p>
-          <!-- </router-link> -->
-          <!-- <router-link to="/regs"> -->
-          <p @click="regs">注册</p>
-          <!-- </router-link> -->
+          <p @click="login" v-show="doLogin">登录</p>
+          <p @click="regs" v-show="doLogin">注册</p>
+          <p id="user" v-show="!doLogin">欢迎,{{username}}</p>
+          <p id="esc" @click="esc" v-show="!doLogin">退出</p>
         </div>
       </div>
     </div>
@@ -37,7 +35,9 @@ import { mapActions } from "vuex";
 export default {
   data() {
     return {
-      mon: "348"
+      mon: "348",
+      doLogin: false,
+      username: ""
     };
   },
   methods: {
@@ -46,7 +46,27 @@ export default {
     },
     regs() {
       this.$router.push("/regs");
+    },
+    esc() {
+      if (confirm("确定要退出吗?")) {
+        this.$axios.post("http://127.0.0.1:8088/api/esc").then(res => {
+          // this.$router.push("/login");
+          window.history.go(0);
+        });
+      }
     }
+  },
+  mounted() {
+    // 获取登录状态
+    this.$axios.post("http://127.0.0.1:8088/api/index").then(({ data }) => {
+      if (data.status == 1) {
+        this.doLogin = false;
+        this.username = data.uname;
+      } else {
+        this.doLogin = true;
+      }
+      // console.info(data);
+    });
   }
 };
 </script>
@@ -140,6 +160,15 @@ export default {
       }
     }
   }
+}
+#user {
+  &:hover {
+    color: silver;
+    cursor: initial;
+  }
+}
+#esc {
+  margin-left: 8px;
 }
 </style>
 

@@ -1,6 +1,6 @@
 <template>
   <div id="box">
-      <!-- 顶部 -->
+    <!-- 顶部 -->
     <toyo-Header />
     <!-- 右边悬框 -->
     <toyo-Float />
@@ -16,6 +16,17 @@
     <toyo-Footer />
   </div>
 </template>
+
+<script>
+export default {
+  // computed: {
+  //   key() {
+  //     return this.$router.path + Math.random();
+  //   }
+  // }
+};
+</script>
+
 
 
 

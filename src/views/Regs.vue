@@ -101,26 +101,89 @@ export default {
     };
   },
   methods: {
-    //   用户名登录验证
+    //  1  ===> 用户名登录验证
     onSubmit() {
-      console.log("用户名注册!");
-      // 验证码验证
-      if (this.form.code.toUpperCase() == this.code.toUpperCase()) {
-        console.info("验证码正确");
-      } else {
-        console.info("验证码错误");
+      // 验证是否有未填项
+      if (
+        this.form.uname == "" ||
+        this.form.upwd == "" ||
+        this.form.upwd2 == "" ||
+        this.form.code == ""
+      ) {
+        console.info("请填写完整信息");
+        return;
       }
+      // 验证码验证
+      if (!(this.form.code.toUpperCase() == this.code.toUpperCase())) {
+        console.info("验证码错误");
+        return;
+      }
+      // 各种验证
+      // ...
+      // ...
+      // 重复密码验证
+      if (!(this.form.upwd == this.form.upwd2)) {
+        console.info("两次密码不一致");
+        return;
+      }
+      this.$axios
+        .post("http://127.0.0.1:8088/api/regs", {
+          uname: this.form.uname,
+          upwd: this.form.upwd
+        })
+        .then(({ data }) => {
+          if (data.status == 1) {
+            if (confirm(data.msg + ",是否现在登录")) {
+              this.$router.push("/login");
+            }
+          } else {
+            console.info(data.msg);
+          }
+        });
     },
-    // 邮箱登录验证
+
+    // 2 ===>  邮箱登录验证
     onSubmit2() {
-      console.log("邮箱注册!");
-      // 验证码验证
-      if (this.form.code.toUpperCase() == this.code.toUpperCase()) {
-        console.info("验证码正确");
-      } else {
-        console.info("验证码错误");
+      // 验证是否有未填项
+      if (
+        this.form2.uname == "" ||
+        this.form2.upwd == "" ||
+        this.form2.upwd2 == "" ||
+        this.form2.code == ""
+      ) {
+        console.info("请填写完整信息");
+        return;
       }
+      // 验证码验证
+      if (!(this.form2.code.toUpperCase() == this.code.toUpperCase())) {
+        console.info("验证码错误");
+        return;
+      }
+      // 各种验证
+      // ...
+      // ...
+      // 重复密码验证
+      if (!(this.form2.upwd == this.form2.upwd2)) {
+        console.info("两次密码不一致");
+        return;
+      }
+      this.$axios
+        .post("http://127.0.0.1:8088/api/regs", {
+          uname: this.form2.uname,
+          upwd: this.form2.upwd
+        })
+        .then(({ data }) => {
+          if (data.status == 1) {
+            if (confirm(data.msg + ",是否现在登录")) {
+              this.$router.push("/login");
+            }
+          } else {
+            console.info(data.msg);
+          }
+        });
     },
+
+    // 点击切换验证码
     tabcode() {
       let str = "";
       for (let i = 0; i < 4; i++) {
@@ -132,7 +195,8 @@ export default {
       }
       this.code = str;
     },
-    // 切换登录方式
+
+    // 点击切换登录方式
     change1() {
       this.tabstyle1 = {
         "background-position": "134px 224px"
@@ -154,6 +218,7 @@ export default {
   },
   mounted() {
     document.documentElement.scrollTop = 0;
+
     // 生成验证码
     let createCode = () => {
       let str = "";
@@ -167,6 +232,7 @@ export default {
       this.code = str;
     };
     createCode();
+
     // TAB键切换注册方式
     window.onkeydown = ev => {
       // 阻止 键盘Tab键 默认行为,解决阻止默认行为后input框无法输出

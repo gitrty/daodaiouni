@@ -231,7 +231,8 @@ export default {
     background-color: #fff;
   }
 }
-.love_quickservice a.to-top {
+.love_quickservice .to-top {
+  display: block;
   background: url(../../images/go_top.png) no-repeat;
   background-position: 1px 0px;
   width: 50px;
