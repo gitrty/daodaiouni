@@ -62,7 +62,7 @@ export default {
         console.info("账号密码不能为空");
       } else {
         this.$axios
-          .post("http://127.0.0.1:8088/api/login", {
+          .post("/api/login", {
             uname: this.form.uname,
             upwd: this.form.upwd
           })

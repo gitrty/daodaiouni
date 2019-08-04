@@ -377,7 +377,7 @@ export default {
         height: 153px;
         right: 26px;
         top: 26px;
-        z-index: 5;
+        z-index: 1;
       }
       .con-FangDa {
         width: 602px;

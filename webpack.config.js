@@ -62,6 +62,8 @@ module.exports = function (env, argv) {
         //     historyApiFallback: { index: './index.html' }
         // },
         // devtool: 'source-map',
-        ...env.production ? require("./config/webpack.production") : require('./config/webpack.development')
+        ...env.production ? require("./config/webpack.production") : require('./config/webpack.development'),
+
+
     }
 }

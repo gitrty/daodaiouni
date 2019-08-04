@@ -127,7 +127,7 @@ export default {
         return;
       }
       this.$axios
-        .post("http://127.0.0.1:8088/api/regs", {
+        .post("/api/regs", {
           uname: this.form.uname,
           upwd: this.form.upwd
         })

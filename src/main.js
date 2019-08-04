@@ -10,10 +10,8 @@ import "./css"
 // 引入 Elementui
 import "./Elementui"
 
-// 引入axios并挂到Vue原形对象上
-import axios from "axios";
-axios.defaults.withCredentials=true;
-Vue.prototype.$axios = axios;
+// 引入axios
+import "./axios"
 
 // 注册自定义全局组件
 import toyo from "./components";

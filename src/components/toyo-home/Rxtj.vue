@@ -20,616 +20,83 @@
           <a id="tab5" href="javascript:void(0)">黄金</a>
         </h2>
       </div>
-      <!-- 2 -->
+      <!-- 2-0 -->
       <div class="rx-con-con container">
-        <div class="big_link">
-          <router-link to="/details">
-            <a href="javascript:void(0)" target="_blank">
-              <img
-                src="../../images/1500616780447824288.jpg"
-                width="592"
-                height="288"
-                :alt="nameArr[0]"
-                :title="nameArr[0]"
-              />
-            </a>
-          </router-link>
+        <div class="big_link" @click="toDetails" :value="wares[0].wimg">
+          <a href="javascript:void(0)">
+            <img width="592" height="288" :alt="wares[0].wname" :title="wares[0].wname" />
+          </a>
 
-          <a href="javascript:void(0)" target="_blank" class="big_link_txt">
-            <span class="pro_tit">{{nameArr[0]}}</span>
+          <a href="javascript:void(0)" class="big_link_txt">
+            <span class="pro_tit">{{wares[0].wname}}</span>
             <br />
-            <span class="price">￥{{moneyArr[0]}}</span>
+            <span class="price">￥{{wares[0].wprice}}</span>
           </a>
         </div>
-        <div class="small_link">
-          <router-link to="/details">
-            <a href="javascript:void(0)" target="_blank">
-              <img
-                src="../../images/1507630507958889089.jpg"
-                width="288"
-                height="288"
-                :alt="nameArr[1]"
-                :title="nameArr[1]"
-              />
-            </a>
-          </router-link>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[1]}}</span>
+        <div class="small_link" @click="toDetails"  :value="wares[1].wimg">
+          <a href="javascript:void(0)">
+            <img width="288" height="288" :alt="wares[1].wname" :title="wares[1].wname" />
+          </a>
+          <a href="javascript:void(0)" class="small_link_txt">
+            <span class="pro_tit">{{wares[1].wname}}</span>
             <br />
-            <span class="price">￥{{moneyArr[1]}}</span>
+            <span class="price">￥{{wares[1].wprice}}</span>
           </a>
         </div>
-        <div class="small_link">
-          <router-link to="/details">
-            <a href="javascript:void(0)" target="_blank">
-              <img
-                src="../../images/1500616949483449841.jpg"
-                width="288"
-                height="288"
-                :alt="nameArr[2]"
-                :title="nameArr[2]"
-              />
-            </a>
-          </router-link>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[2]}}</span>
+        <div class="small_link" @click="toDetails" :value="wares[2].wimg">
+          <a href="javascript:void(0)">
+            <img width="288" height="288" :alt="wares[2].wname" :title="wares[2].wname" />
+          </a>
+          <a href="javascript:void(0)" class="small_link_txt">
+            <span class="pro_tit">{{wares[2].wname}}</span>
             <br />
-            <span class="price">￥{{moneyArr[2]}}</span>
+            <span class="price">￥{{wares[2].wprice}}</span>
           </a>
         </div>
       </div>
-      <!-- 3 -->
+      <!-- 3-0 -->
       <div class="rx-con-con container">
-        <div class="small_link" id="first-img">
-          <router-link to="/details">
-            <a href="javascript:void(0)" target="_blank">
-              <img
-                src="../../images/1507630587747792085.jpg"
-                width="288"
-                height="288"
-                :alt="nameArr[3]"
-                :title="nameArr[3]"
-              />
-            </a>
-          </router-link>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[3]}}</span>
+        <div class="small_link" id="first-img" @click="toDetails"  :value="wares[3].wimg">
+          <a href="javascript:void(0)">
+            <img width="288" height="288" :alt="wares[3].wname" :title="wares[3].wname" />
+          </a>
+          <a href="javascript:void(0)" class="small_link_txt">
+            <span class="pro_tit">{{wares[3].wname}}</span>
             <br />
-            <span class="price">￥{{moneyArr[3]}}</span>
+            <span class="price">￥{{wares[3].wprice}}</span>
           </a>
         </div>
-        <div class="small_link">
-          <router-link to="/details">
-            <a href="javascript:void(0)" target="_blank">
-              <img
-                src="../../images/1500617011079585423.jpg"
-                width="288"
-                height="288"
-                :alt="nameArr[4]"
-                :title="nameArr[4]"
-              />
-            </a>
-          </router-link>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[4]}}</span>
+        <div class="small_link" @click="toDetails"  :value="wares[4].wimg">
+          <a href="javascript:void(0)">
+            <img width="288" height="288" :alt="wares[4].wname" :title="wares[4].wname" />
+          </a>
+          <a href="javascript:void(0)" class="small_link_txt">
+            <span class="pro_tit">{{wares[4].wname}}</span>
             <br />
-            <span class="price">￥{{moneyArr[4]}}</span>
+            <span class="price">￥{{wares[4].wprice}}</span>
           </a>
         </div>
-        <div class="small_link">
-          <router-link to="/details">
-            <a href="javascript:void(0)" target="_blank">
-              <img
-                src="../../images/1500617216838965590.jpg"
-                width="288"
-                height="288"
-                :alt="nameArr[5]"
-                :title="nameArr[5]"
-              />
-            </a>
-          </router-link>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[5]}}</span>
+        <div class="small_link" @click="toDetails"  :value="wares[5].wimg">
+          <a href="javascript:void(0)">
+            <img width="288" height="288" :alt="wares[5].wname" :title="wares[5].wname" />
+          </a>
+          <a href="javascript:void(0)" class="small_link_txt">
+            <span class="pro_tit">{{wares[5].wname}}</span>
             <br />
-            <span class="price">￥{{moneyArr[5]}}</span>
+            <span class="price">￥{{wares[5].wprice}}</span>
           </a>
         </div>
-        <div class="small_link">
-          <router-link to="/details">
-            <a href="javascript:void(0)" target="_blank">
-              <img
-                src="../../images/1507621834900057751.jpg"
-                width="288"
-                height="288"
-                :alt="nameArr[6]"
-                :title="nameArr[6]"
-              />
-            </a>
-          </router-link>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[6]}}</span>
+        <div class="small_link" @click="toDetails"  :value="wares[6].wimg">
+          <a href="javascript:void(0)">
+            <img width="288" height="288" :alt="wares[6].wname" :title="wares[6].wname" />
+          </a>
+          <a href="javascript:void(0)" class="small_link_txt">
+            <span class="pro_tit">{{wares[6].wname}}</span>
             <br />
-            <span class="price">￥{{moneyArr[6]}}</span>
+            <span class="price">￥{{wares[6].wprice}}</span>
           </a>
         </div>
       </div>
-      <!-- 结束 -->
-      <!-- 2 -->
-      <div class="rx-con-con container">
-        <div class="big_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507626120997791493.jpg"
-              width="592"
-              height="288"
-              :alt="nameArr[0]"
-              :title="nameArr[0]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="big_link_txt">
-            <span class="pro_tit">{{nameArr[0]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[0]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507626186869808694.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[1]"
-              :title="nameArr[1]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[1]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[1]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507626250892221225.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[2]"
-              :title="nameArr[2]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[2]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[2]}}</span>
-          </a>
-        </div>
-      </div>
-      <!-- 3 -->
-      <div class="rx-con-con container">
-        <div class="small_link" id="first-img">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507634133240632309.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[3]"
-              :title="nameArr[3]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[3]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[3]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507634195823211283.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[4]"
-              :title="nameArr[4]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[4]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[4]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507634241262344959.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[5]"
-              :title="nameArr[5]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[5]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[5]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507634282586237753.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[6]"
-              :title="nameArr[6]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[6]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[6]}}</span>
-          </a>
-        </div>
-      </div>
-      <!-- 结束 -->
-      <!-- 2 -->
-      <div class="rx-con-con container">
-        <div class="big_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1500616780447824288.jpg"
-              width="592"
-              height="288"
-              :alt="nameArr[0]"
-              :title="nameArr[0]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="big_link_txt">
-            <span class="pro_tit">{{nameArr[0]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[0]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507630507958889089.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[1]"
-              :title="nameArr[1]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[1]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[1]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1500616949483449841.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[2]"
-              :title="nameArr[2]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[2]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[2]}}</span>
-          </a>
-        </div>
-      </div>
-      <!-- 3 -->
-      <div class="rx-con-con container">
-        <div class="small_link" id="first-img">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507630587747792085.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[3]"
-              :title="nameArr[3]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[3]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[3]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1500617011079585423.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[4]"
-              :title="nameArr[4]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[4]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[4]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1500617216838965590.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[5]"
-              :title="nameArr[5]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[5]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[5]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507621834900057751.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[6]"
-              :title="nameArr[6]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[6]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[6]}}</span>
-          </a>
-        </div>
-      </div>
-      <!-- 结束 -->
-      <!-- 2 -->
-      <div class="rx-con-con container">
-        <div class="big_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507626120997791493.jpg"
-              width="592"
-              height="288"
-              :alt="nameArr[0]"
-              :title="nameArr[0]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="big_link_txt">
-            <span class="pro_tit">{{nameArr[0]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[0]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507626186869808694.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[1]"
-              :title="nameArr[1]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[1]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[1]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507626250892221225.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[2]"
-              :title="nameArr[2]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[2]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[2]}}</span>
-          </a>
-        </div>
-      </div>
-      <!-- 3 -->
-      <div class="rx-con-con container">
-        <div class="small_link" id="first-img">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507634133240632309.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[3]"
-              :title="nameArr[3]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[3]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[3]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507634195823211283.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[4]"
-              :title="nameArr[4]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[4]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[4]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507634241262344959.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[5]"
-              :title="nameArr[5]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[5]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[5]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507634282586237753.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[6]"
-              :title="nameArr[6]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[6]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[6]}}</span>
-          </a>
-        </div>
-      </div>
-      <!-- 结束 -->
-      <!-- 2 -->
-      <div class="rx-con-con container">
-        <div class="big_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1500616780447824288.jpg"
-              width="592"
-              height="288"
-              :alt="nameArr[0]"
-              :title="nameArr[0]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="big_link_txt">
-            <span class="pro_tit">{{nameArr[0]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[0]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507630507958889089.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[1]"
-              :title="nameArr[1]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[1]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[1]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1500616949483449841.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[2]"
-              :title="nameArr[2]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[2]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[2]}}</span>
-          </a>
-        </div>
-      </div>
-      <!-- 3 -->
-      <div class="rx-con-con container">
-        <div class="small_link" id="first-img">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507630587747792085.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[3]"
-              :title="nameArr[3]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[3]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[3]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1500617011079585423.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[4]"
-              :title="nameArr[4]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[4]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[4]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1500617216838965590.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[5]"
-              :title="nameArr[5]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[5]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[5]}}</span>
-          </a>
-        </div>
-        <div class="small_link">
-          <a href="javascript:void(0)" target="_blank">
-            <img
-              src="../../images/1507621834900057751.jpg"
-              width="288"
-              height="288"
-              :alt="nameArr[6]"
-              :title="nameArr[6]"
-            />
-          </a>
-          <a href="javascript:void(0)" target="_blank" class="small_link_txt">
-            <span class="pro_tit">{{nameArr[6]}}</span>
-            <br />
-            <span class="price">￥{{moneyArr[6]}}</span>
-          </a>
-        </div>
-      </div>
-      <!-- 结束 -->
     </div>
   </div>
 </template>
@@ -637,12 +104,22 @@
 <script>
 export default {
   mounted() {
-    let list = document.querySelectorAll(".rx-con-tit>h2>a");
-    let contai = document.querySelectorAll(".container");
-    // 进入页面时隐藏多余的 图片
-    contai.forEach((el, index) => {
-      index >= 2 ? (el.style.display = "none") : (el.style.display = "block");
+    this.$axios.post("/api/wares", { token: "toyo" }).then(({ data }) => {
+      this.everyWare = data;
+      this.wares = this.everyWare[0];
+      // 添加动态图片  =>  不能直接添加(因为挂载前没有地址,会报错) , 需要在 axios 获取后动态添加
+      let nodeList = [
+        ...document.querySelectorAll(".big_link>a img"),
+        ...document.querySelectorAll(".small_link>a img")
+      ];
+      // console.info(nodeList);
+      nodeList.forEach((el, index) => {
+        el.src = require(`../../images/${this.wares[index].wimg}.jpg`);
+      });
     });
+
+    let list = document.querySelectorAll(".rx-con-tit>h2>a");
+
     list.forEach((el, index) => {
       el.onmouseenter = () => {
         // 导航切换
@@ -650,28 +127,68 @@ export default {
           el.style.color = "#fff";
         });
         el.style.color = "#555";
-        // 图片区域切换
-        contai.forEach(el => {
-          el.style.display = "none";
+        // 图片区域文字切换
+        this.wares = this.everyWare[index];
+        // 图片动态切换
+        let nodeList = [
+          ...document.querySelectorAll(".big_link>a img"),
+          ...document.querySelectorAll(".small_link>a img")
+        ];
+        nodeList.forEach((el, index) => {
+          el.src = require(`../../images/${this.wares[index].wimg}.jpg`);
         });
-        contai[index * 2].style.display = "block";
-        contai[index * 2 + 1].style.display = "block";
       };
     });
   },
   data() {
     return {
-      moneyArr: [6559, 7115, 12280, 3889, 4226, 5305, 8899],
-      nameArr: [
-        "恋人絮语",
-        "典雅",
-        "爱守护-公主",
-        "玫瑰情事",
-        "简单爱",
-        "简单爱",
-        "经典皇冠"
+      everyWare: [],
+      wares: [
+        {
+          wname: "",
+          wprice: "",
+          wimg: ""
+        },
+        {
+          wname: "",
+          wprice: "",
+          wimg: ""
+        },
+        {
+          wname: "",
+          wprice: "",
+          wimg: ""
+        },
+        {
+          wname: "",
+          wprice: "",
+          wimg: ""
+        },
+        {
+          wname: "",
+          wprice: "",
+          wimg: ""
+        },
+        {
+          wname: "",
+          wprice: "",
+          wimg: ""
+        },
+        {
+          wname: "",
+          wprice: "",
+          wimg: ""
+        }
       ]
     };
+  },
+  methods: {
+    // 点击商品 跳转商品详情页 ,并动态传递 商品 编号
+    toDetails(ev) {
+      // div 等元素的 value 值需要使用 getAttribute("value") 的方式获取
+      let oKey = ev.currentTarget.getAttribute('value')
+      this.$router.push(`/details?${oKey}`);
+    }
   }
 };
 </script>

@@ -24,6 +24,14 @@
           <p @click="regs" v-show="doLogin">注册</p>
           <p id="user" v-show="!doLogin">欢迎,{{username}}</p>
           <p id="esc" @click="esc" v-show="!doLogin">退出</p>
+
+          <el-dialog title="退出登录" :visible.sync="dialogVisible" width="300px">
+            <span>确定要退出吗?</span>
+            <span slot="footer" class="dialog-footer">
+              <el-button @click="dialogVisible = false">取 消</el-button>
+              <el-button type="primary" @click="godie">确 定</el-button>
+            </span>
+          </el-dialog>
         </div>
       </div>
     </div>
@@ -37,7 +45,8 @@ export default {
     return {
       mon: "348",
       doLogin: false,
-      username: ""
+      username: "",
+      dialogVisible: false
     };
   },
   methods: {
@@ -48,17 +57,19 @@ export default {
       this.$router.push("/regs");
     },
     esc() {
-      if (confirm("确定要退出吗?")) {
-        this.$axios.post("http://127.0.0.1:8088/api/esc").then(res => {
-          // this.$router.push("/login");
-          window.history.go(0);
-        });
-      }
+      this.dialogVisible = true;
+    },
+    godie() {
+      this.dialogVisible = false;
+      this.$axios.post("/api/esc").then(res => {
+        // this.$router.push("/login");
+        window.history.go(0);
+      });
     }
   },
   mounted() {
     // 获取登录状态
-    this.$axios.post("http://127.0.0.1:8088/api/index").then(({ data }) => {
+    this.$axios.post("/api/index").then(({ data }) => {
       if (data.status == 1) {
         this.doLogin = false;
         this.username = data.uname;
