@@ -132,6 +132,7 @@ export default {
           upwd: this.form.upwd
         })
         .then(({ data }) => {
+          // console.info(data)
           if (data.status == 1) {
             if (confirm(data.msg + ",是否现在登录")) {
               this.$router.push("/login");
