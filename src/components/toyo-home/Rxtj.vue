@@ -104,9 +104,10 @@
 <script>
 export default {
   mounted() {
-    this.$axios.post("/api/wares", { token: "toyo" }).then(({ data }) => {
+    this.$axios.post("/shopping/wares", { token: "toyo" }).then(({ data }) => {
+      console.info(data)
       this.everyWare = data;
-      this.wares = this.everyWare[0];
+      this.wares = this.everyWare;
       // 添加动态图片  =>  不能直接添加(因为挂载前没有地址,会报错) , 需要在 axios 获取后动态添加
       let nodeList = [
         ...document.querySelectorAll(".big_link>a img"),
