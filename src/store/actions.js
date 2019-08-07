@@ -50,7 +50,7 @@ export default {
                 if (data.status == 1) {
                     thatuser = data.uname;
                 } else {
-                    console.info('零食用户');
+                    // console.info('零食用户');
                     state.temshow = true;
                     return;
                 }
@@ -60,17 +60,19 @@ export default {
                     // console.info(data.ushop);
                     let thatche = data.ushop;  //数据库中的用户 购物车
                     // 若购物车不存在 则创建一个购物车 (一个数组)
+                    // console.info(thatche)
                     if (thatche == null || thatche == '' || thatche == undefined) {
                         thatche = [];
                         thatshop.num = 1;
                         thatche.push(thatshop);
                         Vue.prototype.$axios.post('/shopping/addshop',
                             { uname: thatuser, ushop: JSON.stringify(thatche) });
+                        state.num_zong++;
                         //若存在购物车 , 则获取到用户购物车 
                     } else {
                         let thische = JSON.parse(thatche);
                         let tem = 0
-                        console.info(thatshop)
+                        // console.info(thatshop)
                         // 如果存在商品 则增加数量
                         thische.forEach((el, index) => {
                             if (el.wimg == thatshop.wimg) {
@@ -83,7 +85,7 @@ export default {
                             thatshop.num = 1;
                             thische.push(thatshop);
                         }
-                        console.info(thische);
+                        // console.info(thische);
                         Vue.prototype.$axios.post('/shopping/addshop',
                             { uname: thatuser, ushop: JSON.stringify(thische) });
                         state.num_zong++;

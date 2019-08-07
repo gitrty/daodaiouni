@@ -9,7 +9,7 @@
           <el-input v-model="form.uname" placeholder="请输入用户名"></el-input>
         </el-form-item>
         <el-form-item label="密码">
-          <el-input v-model="form.upwd" placeholder="请输入密码"></el-input>
+          <el-input v-model="form.upwd" placeholder="请输入密码" type="password"></el-input>
         </el-form-item>
         <el-form-item label="记住密码">
           <el-switch v-model="form.delivery"></el-switch>
@@ -72,7 +72,7 @@ export default {
               // 是否记住账号密码  (存储cookie)
               if (this.form.delivery) {
                 // 上传账号密码到cookie
-                // ...
+                this.$cookies.set("keyName", this.form.uname, 60 * 60 * 24 * 7);
               }
               this.$router.push("/");
               window.history.go(0);
@@ -84,7 +84,7 @@ export default {
       }
     },
     onReg() {
-      console.log("reg!");
+      // console.log("reg!");
       this.$router.push("/regs");
     },
     wjpwd() {

@@ -13,6 +13,10 @@ import "./Elementui"
 // 引入axios
 import "./axios"
 
+// 使用cookie组件
+import VueCookies from 'vue-cookies'
+Vue.use(VueCookies)
+
 // 注册自定义全局组件
 import toyo from "./components";
 Vue.use(toyo);

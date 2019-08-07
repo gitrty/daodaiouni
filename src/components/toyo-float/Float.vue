@@ -84,9 +84,8 @@ export default {
     });
     // 获取已登录用户
     this.$axios.post("/api/index").then(({ data }) => {
-      if(data.status==-1){
-
-        console.info('零食用户')
+      if (data.status == -1) {
+        // console.info("零食用户");
         return;
       }
       let username = data.uname;
@@ -95,6 +94,9 @@ export default {
         .post("/shopping/usershop", { uname: username })
         .then(({ data }) => {
           let usershop = JSON.parse(data.ushop);
+          if (usershop == "" || usershop == null || usershop == undefined) {
+            usershop = [];
+          }
           // 购物车总数量
           let zongshu = 0;
           usershop.forEach(el => {

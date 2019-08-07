@@ -74,7 +74,7 @@
       <!-- 右部分 -->
       <div class="loupe-r">
         <div class="goods_title">
-          <h1>恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列</h1>
+          <h1>{{luopeshop.wname}}/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列</h1>
           <i></i>
         </div>
         <ul class="good_attr">
@@ -85,7 +85,7 @@
           <li class="cuxiao">
             钻石网价：
             <span class="p_red">￥</span>
-            <span class="shop_price">6299.00</span>
+            <span class="shop_price">{{luopeshop.wprice}}</span>
           </li>
           <li>
             累计销售：
@@ -213,15 +213,31 @@ export default {
   data() {
     return {
       fangda_img: require("../../images/fd0.jpg"),
-      cite_msg: "-请选择-"
+      cite_msg: "-请选择-",
+      luopeshop: {
+        wid: "",
+        wname: "",
+        wprice: "",
+        wimg: ""
+      }
     };
   },
-  methods: mapActions(["show", "addshop","nor","gologin"]),
+  methods: mapActions(["show", "addshop", "nor", "gologin"]),
   computed: mapGetters(["falg"]),
   mounted() {
+    // 获取商品各参数
+    this.$axios.post("/shopping/wares", { token: "toyo" }).then(({ data }) => {
+      let shopid = this.$route.query.shopid;
+      data.forEach(el => {
+        if (el.wimg == shopid) {
+          this.luopeshop = el;
+          console.info(this.luopeshop);
+        }
+      });
+    });
     //  获取url指定商品id
     // console.info(this.$route.query.shopid);
-    this.fangda_img = require(`../../images/${this.$route.query.shopid}.jpg`);
+    this.fangda_img = require(`../../images/${this.$route.query.shopid}_1.jpg`);
     //   切换小星星颜色
     document.querySelector(".jiaru").onmouseenter = () => {
       document
@@ -636,7 +652,7 @@ export default {
       width: 90px;
       margin: 0px;
       position: relative;
-      z-index: 10;
+      z-index: 1;
       float: left;
       cite {
         width: 84px;
