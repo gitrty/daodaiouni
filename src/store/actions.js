@@ -30,10 +30,65 @@ export default {
         Vue.prototype.animate_slow(smallImg, { left: mX, top: mY, opacity: 0 }, () => {
             smallImg.style.display = 'none';
         });
+        // 动态购物车
+        let thatshop;    //当前页面的商品
+        let thatuser;    //当前登录用户
+        let thatche;     //当前用户购物车
+        Vue.prototype.$axios.post("/shopping/wares", { token: "toyo" }).then(({ data }) => {
+            let shopid = window.location.href.split('?')[1].split('=')[1];
+            // console.info(shopid)
+            data.forEach(el => {
+                if (el.wimg == shopid) {
+                    thatshop = el;
+                }
+            })
+            // console.info(thatshop);
 
-        Vue.prototype.$axios.post('/api/index').then(({ data }) => {
-            console.info(data)
+            Vue.prototype.$axios.post('/api/index').then(({ data }) => {
+                // console.info(data)
+                if (data.status == 1) {
+                    thatuser = data.uname;
+                }
+                // console.info(thatuser);
+                // 获取当前用户购物车
+                Vue.prototype.$axios.post("/shopping/usershop", { uname: thatuser }).then(({ data }) => {
+                    // console.info(data.ushop);
+                    let thatche = data.ushop;  //数据库中的用户 购物车
+                    // 若购物车不存在 则创建一个购物车 (一个数组)
+                    if (thatche == null || thatche == '' || thatche == undefined) {
+                        thatche = [];
+                        thatshop.num = 1;
+                        thatche.push(thatshop);
+                        Vue.prototype.$axios.post('/shopping/addshop',
+                            { uname: thatuser, ushop: JSON.stringify(thatche) });
+                    //若存在购物车 , 则获取到用户购物车 
+                    } else {
+                        let thische = JSON.parse(thatche);
+                        let tem = 0
+                        console.info(thatshop)
+                        // 如果存在商品 则增加数量
+                        thische.forEach((el, index) => {
+                            if (el.wimg == thatshop.wimg) {
+                                thische[index].num++;
+                                tem++;
+                            }
+                        })
+                        // 如果不存在商品 则添加商品
+                        if (tem == 0) {
+                            thatshop.num = 1;
+                            thische.push(thatshop);
+                        }
+                        console.info(thische);
+                        Vue.prototype.$axios.post('/shopping/addshop',
+                            { uname: thatuser, ushop: JSON.stringify(thische) })
+                    }
+
+                })
+            })
+
         })
+
+
     }
 
 }
