@@ -45,13 +45,15 @@
 </template>
 
 <script>
+// 使用base64进行编码
+import { Base64 } from "js-base64";
 export default {
   data() {
     return {
       form: {
         uname: "",
         upwd: "",
-        delivery: false
+        delivery: true
       }
     };
   },
@@ -64,7 +66,7 @@ export default {
         this.$axios
           .post("/api/login", {
             uname: this.form.uname,
-            upwd: this.form.upwd
+            upwd: Base64.encode(this.form.upwd)
           })
           .then(({ data }) => {
             if (data.status == 1) {
@@ -72,13 +74,26 @@ export default {
               // 是否记住账号密码  (存储cookie)
               if (this.form.delivery) {
                 // 上传账号密码到cookie
-                this.$cookies.set("keyName", this.form.uname, 60 * 60 * 24 * 7);
+                this.$cookies.set(
+                  "keyName",
+                  Base64.encode(this.form.uname),
+                  60 * 60 * 24 * 7
+                );
+                this.$cookies.set(
+                  "keyPwd",
+                  Base64.encode(this.form.upwd),
+                  60 * 60 * 24 * 7
+                );
+              } else {
+                this.$cookies.remove("keyName");
+                this.$cookies.remove("keyPwd");
               }
               this.$router.push("/");
               window.history.go(0);
             } else {
               //登录失败
               console.info(data.msg);
+              alert("密码错误");
             }
           });
       }
@@ -93,6 +108,11 @@ export default {
   },
   mounted() {
     document.documentElement.scrollTop = 0;
+    // 判断是否有记住密码
+    if (this.$cookies.get("keyName") && this.$cookies.get("keyPwd")) {
+      this.form.uname = Base64.decode(this.$cookies.get("keyName"));
+      this.form.upwd = Base64.decode(this.$cookies.get("keyPwd"));
+    }
   }
 };
 </script>

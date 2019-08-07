@@ -16,10 +16,10 @@
           <el-input v-model="form.uname" placeholder="请输入用户名"></el-input>
         </el-form-item>
         <el-form-item label="密码">
-          <el-input v-model="form.upwd" placeholder="请输入密码"></el-input>
+          <el-input v-model="form.upwd" placeholder="请输入密码" type='password'></el-input>
         </el-form-item>
         <el-form-item label="重复密码">
-          <el-input v-model="form.upwd2" placeholder="请再次输入密码"></el-input>
+          <el-input v-model="form.upwd2" placeholder="请再次输入密码" type='password'></el-input>
         </el-form-item>
         <el-form-item label="验证码">
           <el-input v-model="form.code" placeholder="请输入验证码" class="incode"></el-input>
@@ -35,10 +35,10 @@
           <el-input v-model="form2.uname" placeholder="请输入邮箱"></el-input>
         </el-form-item>
         <el-form-item label="密码">
-          <el-input v-model="form2.upwd" placeholder="请输入密码"></el-input>
+          <el-input v-model="form2.upwd" placeholder="请输入密码" type='password'></el-input>
         </el-form-item>
         <el-form-item label="重复密码">
-          <el-input v-model="form2.upwd2" placeholder="请再次输入密码"></el-input>
+          <el-input v-model="form2.upwd2" placeholder="请再次输入密码" type='password'></el-input>
         </el-form-item>
         <el-form-item label="验证码">
           <el-input v-model="form2.code" placeholder="请输入验证码" class="incode"></el-input>
@@ -75,6 +75,7 @@
 </template>
 
 <script>
+import { Base64 } from "js-base64";
 export default {
   data() {
     return {
@@ -129,7 +130,7 @@ export default {
       this.$axios
         .post("/api/regs", {
           uname: this.form.uname,
-          upwd: this.form.upwd
+          upwd: Base64.encode(this.form.upwd)
         })
         .then(({ data }) => {
           // console.info(data)
