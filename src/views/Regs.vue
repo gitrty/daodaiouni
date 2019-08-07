@@ -13,7 +13,7 @@
       <!-- left-bottom1 -->
       <el-form ref="form" :model="form" label-width="100px" v-show="tabreg">
         <el-form-item label="账号">
-          <el-input v-model="form.uname" placeholder="请输入用户名"></el-input>
+          <el-input v-model="form.uname" placeholder="请输入用户名" @change="unm"></el-input>
         </el-form-item>
         <el-form-item label="密码">
           <el-input v-model="form.upwd" placeholder="请输入密码" type='password'></el-input>
@@ -32,7 +32,7 @@
       <!-- left-bottom2 -->
       <el-form ref="form2" :model="form2" label-width="100px" v-show="!tabreg">
         <el-form-item label="邮箱">
-          <el-input v-model="form2.uname" placeholder="请输入邮箱"></el-input>
+          <el-input v-model="form2.uname" placeholder="请输入邮箱" @change="unm2"></el-input>
         </el-form-item>
         <el-form-item label="密码">
           <el-input v-model="form2.upwd" placeholder="请输入密码" type='password'></el-input>
@@ -75,6 +75,7 @@
 </template>
 
 <script>
+import { Message } from "element-ui";
 import { Base64 } from "js-base64";
 export default {
   data() {
@@ -98,10 +99,58 @@ export default {
       },
       tabstyle2: {
         "background-position": "0px 224px"
-      }
+      },
+      tabTest: false
     };
   },
   methods: {
+    unm() {
+      // 后台验证是否重复
+      this.$axios
+        .post("/api/test", { uname: this.form.uname })
+        .then(({ data }) => {
+          if (data.status == -1) {
+            Message({
+              message: "用户名已存在",
+              type: "warning"
+            });
+          } else {
+            Message({
+              message: "用户名可用",
+              type: "'success'"
+            });
+          }
+        });
+    },
+    unm2() {
+      if (
+        !/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(
+          this.form2.uname
+        )
+      ) {
+        Message({
+          message: "请输入正确的邮箱",
+          type: "warning"
+        });
+        return;
+      }
+      // 后台验证是否重复
+      this.$axios
+        .post("/api/test", { uname: this.form2.uname })
+        .then(({ data }) => {
+          if (data.status == -1) {
+            Message({
+              message: "用户名已存在",
+              type: "warning"
+            });
+          } else {
+            Message({
+              message: "用户名可用",
+              type: "'success'"
+            });
+          }
+        });
+    },
     //  1  ===> 用户名登录验证
     onSubmit() {
       // 验证是否有未填项
@@ -111,20 +160,22 @@ export default {
         this.form.upwd2 == "" ||
         this.form.code == ""
       ) {
-        console.info("请填写完整信息");
+        alert("请填写完整信息");
+        return;
+      }
+      // 各种验证
+      if (this.form.upwd.length < 6) {
+        alert("密码不能少于6位");
         return;
       }
       // 验证码验证
       if (!(this.form.code.toUpperCase() == this.code.toUpperCase())) {
-        console.info("验证码错误");
+        alert("验证码错误");
         return;
       }
-      // 各种验证
-      // ...
-      // ...
       // 重复密码验证
       if (!(this.form.upwd == this.form.upwd2)) {
-        console.info("两次密码不一致");
+        alert("两次密码不一致");
         return;
       }
       this.$axios
@@ -142,6 +193,7 @@ export default {
             console.info(data.msg);
           }
         });
+      return false;
     },
 
     // 2 ===>  邮箱登录验证
@@ -153,26 +205,29 @@ export default {
         this.form2.upwd2 == "" ||
         this.form2.code == ""
       ) {
-        console.info("请填写完整信息");
+        alert("请填写完整信息");
+        return;
+      }
+      // 各种验证
+
+      if (this.form2.upwd.length < 6) {
+        alert("密码不能少于6位");
         return;
       }
       // 验证码验证
       if (!(this.form2.code.toUpperCase() == this.code.toUpperCase())) {
-        console.info("验证码错误");
+        alert("验证码错误");
         return;
       }
-      // 各种验证
-      // ...
-      // ...
       // 重复密码验证
       if (!(this.form2.upwd == this.form2.upwd2)) {
-        console.info("两次密码不一致");
+        alert("两次密码不一致");
         return;
       }
       this.$axios
         .post("http://127.0.0.1:8088/api/regs", {
           uname: this.form2.uname,
-          upwd: this.form2.upwd
+          upwd: Base64.encode(this.form2.upwd)
         })
         .then(({ data }) => {
           if (data.status == 1) {
@@ -180,9 +235,10 @@ export default {
               this.$router.push("/login");
             }
           } else {
-            console.info(data.msg);
+            alert(data.msg);
           }
         });
+      return false;
     },
 
     // 点击切换验证码
