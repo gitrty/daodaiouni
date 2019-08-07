@@ -19,6 +19,8 @@ Vue.use(toyo);
 
 import App from "./App.vue";
 
+Vue.prototype.$myrouter = router;
+
 new Vue({
     store,
     router,

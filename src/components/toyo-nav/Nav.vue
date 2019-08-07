@@ -25,7 +25,7 @@
         <!-- shopping路由 -->
         <router-link to="/shopping">
           <span>
-            <em v-show='shopnum'>{{shopnum}}</em>
+            <em v-show='this.$store.state.num_zong'>{{this.$store.state.num_zong}}</em>
           </span>
         </router-link>
         <span></span>

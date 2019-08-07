@@ -196,6 +196,14 @@
         </p>
       </div>
     </div>
+
+    <el-dialog title="提示" :visible.sync="this.$store.state.temshow" width="300px">
+            <span>登录后可加入商品到购物车</span>
+            <span slot="footer" class="dialog-footer">
+              <el-button @click="nor">取消</el-button>
+              <el-button type="primary" @click="gologin">去登录</el-button>
+            </span>
+          </el-dialog>
   </div>
 </template>
 
@@ -208,7 +216,7 @@ export default {
       cite_msg: "-请选择-"
     };
   },
-  methods: mapActions(["show", "addshop"]),
+  methods: mapActions(["show", "addshop","nor","gologin"]),
   computed: mapGetters(["falg"]),
   mounted() {
     //  获取url指定商品id
@@ -271,13 +279,13 @@ export default {
     };
     // 计算小蓝块大小 比例
     middleArea.style.width =
-      (parseInt(getStyle(bigArea, "width")) /
-        parseInt(getStyle(bigImg, "width"))) *
+      parseInt(getStyle(bigArea, "width")) /
+        parseInt(getStyle(bigImg, "width")) *
         parseInt(getStyle(middleImg, "width")) +
       "px";
     middleArea.style.height =
-      (parseInt(getStyle(bigArea, "height")) /
-        parseInt(getStyle(bigImg, "height"))) *
+      parseInt(getStyle(bigArea, "height")) /
+        parseInt(getStyle(bigImg, "height")) *
         parseInt(getStyle(middleImg, "height")) +
       "px";
 

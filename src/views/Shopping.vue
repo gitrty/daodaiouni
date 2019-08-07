@@ -33,7 +33,7 @@
         </table>
       </div>
       <!-- content -->
-      <div class="shop-mid">
+      <div class="shop-mid" v-for="(val,index) in forshop" :key="index">
         <table
           width="946"
           align="center"
@@ -55,7 +55,7 @@
                       <td width="112">
                         <a href>
                           <img
-                            src="../images/20461651_thumb_G_1480415743995.jpg"
+                            :src="require(`../images/${val.wimg}.jpg`)"
                             width="80"
                             height="80"
                           />
@@ -63,7 +63,7 @@
                       </td>
                       <td width="160">
                         <div class="fcgn">
-                          <a href>恋人絮语/PT950铂金钻戒 30分/F-G色/SI净度/国检-forever love系列</a>
+                          <a href>{{val.wname}}</a>
                         </div>
                       </td>
                       <td width="46">&nbsp;</td>
@@ -71,8 +71,8 @@
                   </tbody>
                 </table>
               </td>
-              <td width="100" v-text="'¥'+shopprice+'.00'">
-                ￥6299.00
+              <td width="100">
+                ￥{{val.wprice}}
                 <input type="hidden" id="good_price40359" value="6299.00" />
               </td>
               <td width="108">0</td>
@@ -82,13 +82,13 @@
                   <table align="center" width="76" border="0" cellspacing="0" cellpadding="0">
                     <tbody>
                       <tr>
-                        <td width="17" class="fc_jian" @click="decrement">
+                        <td width="17" class="fc_jian" @click="increament">
                           <a href="javascript:void(0);"></a>
                         </td>
                         <td width="42" align="center">
-                          <input class="fcsum" type="text" id="good_num40359" v-model="shopnum_2" />
+                          <input class="fcsum" type="text" id="good_num40359" :value="val.num" disabled />
                         </td>
-                        <td width="17" class="fc_jia" @click="shopnum_2++">
+                        <td width="17" class="fc_jia" @click="decreament" >
                           <a href="javascript:void(0);"></a>
                         </td>
                       </tr>
@@ -96,14 +96,14 @@
                   </table>
                 </div>
               </td>
-              <td width="87" id="xj_good40359">￥226764.00</td>
+              <td width="87" id="xj_good40359">￥{{val.num*val.wprice}}.00</td>
               <td width="77">
                 <span class="fc_sc">
                   <a class="tips">收藏</a>
                 </span>
                 <br />
                 <span class="fc_del">
-                  <a class="tipsdel" @click="delshop">删除</a>
+                  <a class="tipsdel" @click="delshop" :value="val.id" >删除</a>
                 </span>
               </td>
             </tr>
@@ -111,7 +111,7 @@
         </table>
       </div>
       <!-- bottom -->
-      <div class="cart_confirm">
+      <div class="cart_confirm" v-show="this.$store.state.num_zong">
         <div class="width946">
           <div class="w946">
             <table width="946" align="center" border="0" cellspacing="0" cellpadding="0">
@@ -129,7 +129,7 @@
                   <td width="106">
                     <div align="left" class="sl_zongji">
                       数量总计：
-                      <span class="mcolor2" id="allgoodsnumber" v-text="shopnum_2"></span>件
+                      <span class="mcolor2" id="allgoodsnumber">{{this.$store.state.num_zong}}</span>件
                     </div>
                   </td>
                   <td width="65">
@@ -140,8 +140,7 @@
                       <span
                         class="font24 mcolor3"
                         id="allgoodsamount"
-                        v-text="'¥'+shopprice*shopnum_2+'.00'"
-                      ></span>
+                      >{{this.$store.state.price_zong}}</span>
                     </div>
                   </td>
                   <td width="176">
@@ -162,6 +161,9 @@
           </div>
         </div>
       </div>
+        <div class="cart_confirm myconfirm" v-show="!this.$store.state.num_zong">
+          <p>暂无商品...</p>
+        </div>
       <!-- end -->
     </div>
   </div>
@@ -172,22 +174,87 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
-      shopnum_2: 0
+      forshop: []
     };
   },
   methods: {
-    decrement() {
-      this.shopnum_2 > 0 ? this.shopnum_2-- : 0;
-    },
-    // 操作 - 删除 
-    delshop() {
-
+    decrement() {},
+    // 操作 - 删除
+    delshop(ev) {
+      let uid = ev.currentTarget.getAttribute("value");
+      if (confirm("确定要删除吗?")) {
+        // 获取已登录用户
+        this.$axios.post("/api/index").then(({ data }) => {
+          let username = data.uname;
+          // 获取已登录用户的购物车
+          this.$axios
+            .post("/shopping/usershop", { uname: username })
+            .then(({ data }) => {
+              let usershop = JSON.parse(data.ushop);
+              // console.info(usershop);
+              usershop.forEach((el, index) => {
+                if (el.id == uid) {
+                  usershop.splice(index, 1);
+                }
+              });
+              // 从数据库中删除该项商品
+              this.$axios
+                .post("/shopping/addshop", {
+                  uname: username,
+                  ushop: JSON.stringify(usershop)
+                })
+                .then(res => {
+                  this.forshop = usershop;
+                });
+              // 购物车总数量
+              let zongshu = 0;
+              usershop.forEach(el => {
+                zongshu += el.num;
+              });
+              this.$store.state.num_zong = zongshu;
+              // 购物车商品总价格
+              let zongjia = 0;
+              usershop.forEach(el => {
+                zongjia += parseInt(el.wprice * el.num);
+              });
+              this.$store.state.price_zong = zongjia;
+            });
+        });
+      }
     }
   },
   computed: mapGetters(["shopnum", "shopprice"]),
   mounted() {
     document.documentElement.scrollTop = 0;
     this.shopnum_2 = this.shopnum;
+    // 获取已登录用户
+    this.$axios.post("/api/index").then(({ data }) => {
+      if (data.status == -1) {
+        console.info("零食用户3");
+        return;
+      }
+      let username = data.uname;
+      // 获取已登录用户的购物车
+      this.$axios
+        .post("/shopping/usershop", { uname: username })
+        .then(({ data }) => {
+          let usershop = JSON.parse(data.ushop);
+          // console.info(usershop);
+          this.forshop = usershop;
+          // 购物车总数量
+          let zongshu = 0;
+          usershop.forEach(el => {
+            zongshu += el.num;
+          });
+          this.$store.state.num_zong = zongshu;
+          // 购物车商品总价格
+          let zongjia = 0;
+          usershop.forEach(el => {
+            zongjia += parseInt(el.wprice * el.num);
+          });
+          this.$store.state.price_zong = zongjia;
+        });
+    });
   }
 };
 </script>
@@ -362,6 +429,12 @@ table {
 }
 .fc_sc > a {
   color: #000;
+}
+.myconfirm {
+  text-align: center;
+  line-height: 40px;
+  color: #ccc;
+  font-size: 18px;
 }
 </style>
 

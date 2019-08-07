@@ -20,8 +20,8 @@
           id="right_goods_sum"
           class="right_goods_sum"
           style="display: inline;"
-          v-show="shopnum"
-        >{{shopnum}}</span>
+          v-show="this.$store.state.num_zong"
+        >{{this.$store.state.num_zong}}</span>
         <a rel="nofollow" href="javascript:void(0)" id="right_cart" class="love_quick2"></a>
         <div class="love_quick_word" style="  ">购物车</div>
       </div>
@@ -61,8 +61,8 @@ export default {
       document.documentElement.scrollTop = 0;
     },
     // 暂时将qq挂到详情页,开发完成后删除
-    goDetails(){
-      this.$router.push('/details');
+    goDetails() {
+      this.$router.push("/details");
     }
   },
   computed: mapGetters(["shopnum"]),
@@ -82,13 +82,37 @@ export default {
         this.animate_slow(divs[index], { opacity: 0, right: 0 });
       };
     });
+    // 获取已登录用户
+    this.$axios.post("/api/index").then(({ data }) => {
+      if(data.status==-1){
+
+        console.info('零食用户')
+        return;
+      }
+      let username = data.uname;
+      // 获取已登录用户的购物车
+      this.$axios
+        .post("/shopping/usershop", { uname: username })
+        .then(({ data }) => {
+          let usershop = JSON.parse(data.ushop);
+          // 购物车总数量
+          let zongshu = 0;
+          usershop.forEach(el => {
+            zongshu += el.num;
+          });
+          this.$store.state.num_zong = zongshu;
+        });
+    });
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .love_quickservice {
-  .love_quick2,.love_quick3,.love_quick4,.love_quick5{
+  .love_quick2,
+  .love_quick3,
+  .love_quick4,
+  .love_quick5 {
     display: inline-block;
     background-image: url(../../images/kefu_bg.png);
     background-repeat: no-repeat;

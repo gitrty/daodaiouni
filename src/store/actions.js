@@ -7,6 +7,7 @@ export default {
         state.falg = !state.falg;
     },
     addshop: ({ state }) => {
+
         // 创建小图
         state.shopnum++;
         let midImg = document.getElementById('main_img');
@@ -30,7 +31,7 @@ export default {
         Vue.prototype.animate_slow(smallImg, { left: mX, top: mY, opacity: 0 }, () => {
             smallImg.style.display = 'none';
         });
-        // 动态购物车
+        // 购物车
         let thatshop;    //当前页面的商品
         let thatuser;    //当前登录用户
         let thatche;     //当前用户购物车
@@ -48,6 +49,10 @@ export default {
                 // console.info(data)
                 if (data.status == 1) {
                     thatuser = data.uname;
+                } else {
+                    console.info('零食用户');
+                    state.temshow = true;
+                    return;
                 }
                 // console.info(thatuser);
                 // 获取当前用户购物车
@@ -61,7 +66,7 @@ export default {
                         thatche.push(thatshop);
                         Vue.prototype.$axios.post('/shopping/addshop',
                             { uname: thatuser, ushop: JSON.stringify(thatche) });
-                    //若存在购物车 , 则获取到用户购物车 
+                        //若存在购物车 , 则获取到用户购物车 
                     } else {
                         let thische = JSON.parse(thatche);
                         let tem = 0
@@ -80,7 +85,8 @@ export default {
                         }
                         console.info(thische);
                         Vue.prototype.$axios.post('/shopping/addshop',
-                            { uname: thatuser, ushop: JSON.stringify(thische) })
+                            { uname: thatuser, ushop: JSON.stringify(thische) });
+                        state.num_zong++;
                     }
 
                 })
@@ -89,6 +95,12 @@ export default {
         })
 
 
+    },
+    nor({ state }) {
+        state.temshow = false;
+    },
+    gologin({ state }) {
+        state.temshow = false;
+        Vue.prototype.$myrouter.push('/login');
     }
-
 }
