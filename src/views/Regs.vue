@@ -160,22 +160,34 @@ export default {
         this.form.upwd2 == "" ||
         this.form.code == ""
       ) {
-        alert("请填写完整信息");
+        Message({
+          message: "请填写完整信息",
+          type: "warning"
+        });
         return;
       }
       // 各种验证
       if (this.form.upwd.length < 6) {
-        alert("密码不能少于6位");
+        Message({
+          message: "密码不能少于6位",
+          type: "warning"
+        });
         return;
       }
       // 验证码验证
       if (!(this.form.code.toUpperCase() == this.code.toUpperCase())) {
-        alert("验证码错误");
+        Message({
+          message: "验证码错误",
+          type: "warning"
+        });
         return;
       }
       // 重复密码验证
       if (!(this.form.upwd == this.form.upwd2)) {
-        alert("两次密码不一致");
+        Message({
+          message: "两次密码不一致",
+          type: "warning"
+        });
         return;
       }
       this.$axios
@@ -205,23 +217,35 @@ export default {
         this.form2.upwd2 == "" ||
         this.form2.code == ""
       ) {
-        alert("请填写完整信息");
+        Message({
+          message: "请填写完整信息",
+          type: "warning"
+        });
         return;
       }
       // 各种验证
 
       if (this.form2.upwd.length < 6) {
-        alert("密码不能少于6位");
+        Message({
+          message: "密码不能少于6位",
+          type: "warning"
+        });
         return;
       }
       // 验证码验证
       if (!(this.form2.code.toUpperCase() == this.code.toUpperCase())) {
-        alert("验证码错误");
+        Message({
+          message: "验证码错误",
+          type: "warning"
+        });
         return;
       }
       // 重复密码验证
       if (!(this.form2.upwd == this.form2.upwd2)) {
-        alert("两次密码不一致");
+        Message({
+          message: "两次密码不一致",
+          type: "warning"
+        });
         return;
       }
       this.$axios
@@ -235,7 +259,10 @@ export default {
               this.$router.push("/login");
             }
           } else {
-            alert(data.msg);
+            Message({
+              message: data.msg,
+              type: "warning"
+            });
           }
         });
       return false;
