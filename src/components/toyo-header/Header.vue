@@ -44,7 +44,7 @@ export default {
   data() {
     return {
       mon: "348",
-      doLogin: false,
+      doLogin: true,
       username: "",
       dialogVisible: false
     };
@@ -70,13 +70,13 @@ export default {
   mounted() {
     // 获取登录状态
     this.$axios.post("/api/index").then(({ data }) => {
+      // console.info(data);
       if (data.status == 1) {
         this.doLogin = false;
         this.username = data.uname;
       } else {
         this.doLogin = true;
       }
-      // console.info(data);
     });
   }
 };

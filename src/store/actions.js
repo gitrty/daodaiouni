@@ -1,7 +1,7 @@
 import Vue from 'vue';
 export default {
     increment: ({ commit, state, getters }) => {
-        
+
     },
     show: ({ commit, state, getters }) => {
         state.falg = !state.falg;
@@ -30,6 +30,10 @@ export default {
         Vue.prototype.animate_slow(smallImg, { left: mX, top: mY, opacity: 0 }, () => {
             smallImg.style.display = 'none';
         });
+
+        Vue.prototype.$axios.post('/api/index').then(({ data }) => {
+            console.info(data)
+        })
     }
 
 }

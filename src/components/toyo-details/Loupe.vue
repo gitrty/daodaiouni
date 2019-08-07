@@ -211,6 +211,9 @@ export default {
   methods: mapActions(["show", "addshop"]),
   computed: mapGetters(["falg"]),
   mounted() {
+    //  获取url指定商品id
+    // console.info(this.$route.query.shopid);
+    this.fangda_img = require(`../../images/${this.$route.query.shopid}.jpg`);
     //   切换小星星颜色
     document.querySelector(".jiaru").onmouseenter = () => {
       document

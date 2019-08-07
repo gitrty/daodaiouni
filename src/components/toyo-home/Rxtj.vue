@@ -107,7 +107,7 @@ export default {
     this.$axios.post("/shopping/wares", { token: "toyo" }).then(({ data }) => {
       console.info(data)
       this.everyWare = data;
-      this.wares = this.everyWare;
+      this.wares = this.everyWare.slice(0,7);
       // 添加动态图片  =>  不能直接添加(因为挂载前没有地址,会报错) , 需要在 axios 获取后动态添加
       let nodeList = [
         ...document.querySelectorAll(".big_link>a img"),
@@ -129,8 +129,9 @@ export default {
         });
         el.style.color = "#555";
         // 图片区域文字切换
-        this.wares = this.everyWare[index];
+        // this.wares = this.everyWare[index];
         // 图片动态切换
+        this.wares = this.everyWare.slice(7*index,7*index+7);
         let nodeList = [
           ...document.querySelectorAll(".big_link>a img"),
           ...document.querySelectorAll(".small_link>a img")
@@ -188,7 +189,7 @@ export default {
     toDetails(ev) {
       // div 等元素的 value 值需要使用 getAttribute("value") 的方式获取
       let oKey = ev.currentTarget.getAttribute('value')
-      this.$router.push(`/details?${oKey}`);
+      this.$router.push({path:'/details',query:{shopid:oKey}});
     }
   }
 };
