@@ -433,7 +433,7 @@ export default {
             position: absolute;
             cursor: move;
             display: none;
-            z-index: 61;
+            z-index: 2;
           }
           .magnifyingShow {
             width: 400px;
