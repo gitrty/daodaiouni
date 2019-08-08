@@ -231,7 +231,7 @@ export default {
       data.forEach(el => {
         if (el.wimg == shopid) {
           this.luopeshop = el;
-          console.info(this.luopeshop);
+          // console.info(this.luopeshop);
         }
       });
     });
@@ -263,8 +263,13 @@ export default {
     };
     // 切换ul-list的图片边框 / 中图片
     let lis = document.querySelectorAll(".con-FangDa-ImgList>li");
+    let imgs = document.querySelectorAll(".con-FangDa-ImgList>li img");
     let mainImg1 = document.getElementById("main_img");
     let mainImg2 = document.querySelector(".magnifyingShow");
+    // 动态生成小图片
+    imgs.forEach((el,index)=>{
+      el.src = require(`../../images/${this.$route.query.shopid}_${index+1}.jpg`);
+    })
 
     lis.forEach((el, index) => {
       el.onmouseenter = () => {
@@ -274,7 +279,7 @@ export default {
         });
         el.classList.add("active");
         // 切换中图片
-        this.fangda_img = require(`../../images/fd${index}.jpg`);
+        this.fangda_img = require(`../../images/${this.$route.query.shopid}_${index+1}.jpg`);
       };
     });
     // 放大镜
