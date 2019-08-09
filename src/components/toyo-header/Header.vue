@@ -1,5 +1,5 @@
 <template>
-  <div id="header">
+  <div id="header" v-if="this.$store.state.hask">
     <!-- 顶部导航 -->
     <div class="top">
       <div class="con">

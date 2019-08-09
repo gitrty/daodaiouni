@@ -47,6 +47,7 @@
 <script>
 // 使用base64进行编码
 import { Base64 } from "js-base64";
+import { Message } from "element-ui";
 export default {
   data() {
     return {
@@ -84,6 +85,10 @@ export default {
                   Base64.encode(this.form.upwd),
                   60 * 60 * 24 * 7
                 );
+                Message({
+                  message: "登录成功",
+                  type: "success"
+                });
               } else {
                 this.$cookies.remove("keyName");
                 this.$cookies.remove("keyPwd");

@@ -4,5 +4,6 @@ export default {
     falg: false,
     num_zong:0,
     price_zong:0,
-    temshow:false
+    temshow:false,
+    hask:true
 }
