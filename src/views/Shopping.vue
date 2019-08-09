@@ -171,6 +171,7 @@
 
 <script>
 import { mapGetters } from "vuex";
+import { MessageBox } from "element-ui";
 export default {
   data() {
     return {
@@ -263,7 +264,11 @@ export default {
     // 操作 - 删除
     delshop(ev) {
       let uid = ev.currentTarget.getAttribute("value");
-      if (confirm("确定要删除吗?")) {
+      MessageBox.confirm("确定要删除吗?", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "info"
+      }).then(() => {
         // 获取已登录用户
         this.$axios.post("/api/index").then(({ data }) => {
           let username = data.uname;
@@ -301,7 +306,7 @@ export default {
               this.$store.state.price_zong = zongjia;
             });
         });
-      }
+      });
     }
   },
   computed: mapGetters(["shopnum", "shopprice"]),

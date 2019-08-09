@@ -62,7 +62,10 @@ export default {
     // 登录验证
     onSubmit() {
       if (this.form.uname == "" || this.form.upwd == "") {
-        console.info("账号密码不能为空");
+        Message({
+          message: "用户名不能为空",
+          type: "warning"
+        });
       } else {
         this.$axios
           .post("/api/login", {
@@ -97,8 +100,10 @@ export default {
               window.history.go(0);
             } else {
               //登录失败
-              console.info(data.msg);
-              alert("密码错误");
+              Message({
+                message: "密码错误",
+                type: "warning"
+              });
             }
           });
       }

@@ -76,6 +76,7 @@
 
 <script>
 import { Message } from "element-ui";
+import { MessageBox } from "element-ui";
 import { Base64 } from "js-base64";
 export default {
   data() {
@@ -196,15 +197,22 @@ export default {
           upwd: Base64.encode(this.form.upwd)
         })
         .then(({ data }) => {
-          // console.info(data)
           if (data.status == 1) {
-            if (confirm(data.msg + ",是否现在登录")) {
+            MessageBox.confirm("注册成功,是否现在登录?", "提示", {
+              confirmButtonText: "确定",
+              cancelButtonText: "取消",
+              type: "success"
+            }).then(() => {
               this.$router.push("/login");
-            }
+            });
           } else {
-            console.info(data.msg);
+            Message({
+              message: "注册失败,用户名已存在",
+              type: "warning"
+            });
           }
         });
+
       return false;
     },
 
@@ -255,9 +263,13 @@ export default {
         })
         .then(({ data }) => {
           if (data.status == 1) {
-            if (confirm(data.msg + ",是否现在登录")) {
+            MessageBox.confirm("注册成功,是否现在登录?", "提示", {
+              confirmButtonText: "确定",
+              cancelButtonText: "取消",
+              type: "success"
+            }).then(() => {
               this.$router.push("/login");
-            }
+            });
           } else {
             Message({
               message: data.msg,

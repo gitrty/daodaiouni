@@ -49,7 +49,8 @@ module.exports = function (env, argv) {
                                     "libraryDirectory": "es",
                                     "style": true
                                 }]
-                            ]
+                            ],
+                            // "compact": false
                         }
                     }
                 },
