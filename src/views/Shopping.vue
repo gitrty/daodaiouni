@@ -9,10 +9,10 @@
         <table width="946" align="center" border="0" cellspacing="0" cellpadding="0">
           <tbody>
             <tr>
-              <td width="36" height="32">
-              </td>
+              <td width="36" height="32"></td>
               <td width="38">
-                <div style="text-align:center" class="yahei font14 fontblack">图片</div>
+                <!-- <div style="text-align:center" class="yahei font14 fontblack">图片</div> -->
+                <input type="checkbox" id="checkall" checked @click="checkall" />
               </td>
               <td width="280">商品详情</td>
               <td width="100">钻石网报价</td>
@@ -39,7 +39,7 @@
           <tbody>
             <tr>
               <td width="36">
-               
+                <input type="checkbox" class="check" checked @click="change" />
               </td>
               <td width="318" class="font14 fontblack">
                 <table width="318" border="0" cellspacing="0" cellpadding="0">
@@ -47,11 +47,7 @@
                     <tr>
                       <td width="112">
                         <a href>
-                          <img
-                            :src="require(`../images/${val.wimg}.jpg`)"
-                            width="80"
-                            height="80"
-                          />
+                          <img :src="require(`../images/${val.wimg}.jpg`)" width="80" height="80" />
                         </a>
                       </td>
                       <td width="160">
@@ -79,7 +75,13 @@
                           <a href="javascript:void(0);"></a>
                         </td>
                         <td width="42" align="center">
-                          <input class="fcsum" type="text" id="good_num40359" :value="val.num" disabled />
+                          <input
+                            class="fcsum"
+                            type="text"
+                            id="good_num40359"
+                            :value="val.num"
+                            disabled
+                          />
                         </td>
                         <td width="17" class="fc_jia" @click="decrement" :value="val.id">
                           <a href="javascript:void(0);"></a>
@@ -96,7 +98,7 @@
                 </span>
                 <br />
                 <span class="fc_del">
-                  <a class="tipsdel" @click="delshop" :value="val.id" >删除</a>
+                  <a class="tipsdel" @click="delshop" :value="val.id">删除</a>
                 </span>
               </td>
             </tr>
@@ -110,8 +112,7 @@
             <table width="946" align="center" border="0" cellspacing="0" cellpadding="0">
               <tbody>
                 <tr>
-                  <td width="36" height="32">
-                  </td>
+                  <td width="36" height="32"></td>
                   <td width="106">
                     <div align="left" class="sl_zongji">
                       数量总计：
@@ -147,9 +148,9 @@
           </div>
         </div>
       </div>
-        <div class="cart_confirm myconfirm" v-show="!this.$store.state.num_zong">
-          <p>暂无商品...</p>
-        </div>
+      <div class="cart_confirm myconfirm" v-show="!this.$store.state.num_zong">
+        <p>暂无商品...</p>
+      </div>
       <!-- end -->
     </div>
   </div>
@@ -191,19 +192,23 @@ export default {
               })
               .then(res => {
                 this.forshop = usershop;
+                // 计算总数量和总金额
+                let checks = document.querySelectorAll(".check");
+                let zongshu = 0;
+                let zongjia = 0;
+                checks.forEach((ele, index) => {
+                  if (ele.checked) {
+                    // 购物车总数量
+                    zongshu += this.forshop[index].num;
+                    // 购物车商品总价格
+                    zongjia += parseInt(
+                      this.forshop[index].wprice * this.forshop[index].num
+                    );
+                  }
+                });
+                this.$store.state.num_zong = zongshu;
+                this.$store.state.price_zong = zongjia;
               });
-            // 购物车总数量
-            let zongshu = 0;
-            usershop.forEach(el => {
-              zongshu += el.num;
-            });
-            this.$store.state.num_zong = zongshu;
-            // 购物车商品总价格
-            let zongjia = 0;
-            usershop.forEach(el => {
-              zongjia += parseInt(el.wprice * el.num);
-            });
-            this.$store.state.price_zong = zongjia;
           });
       });
     },
@@ -231,19 +236,23 @@ export default {
               })
               .then(res => {
                 this.forshop = usershop;
+                // 计算总数量和总金额
+                let checks = document.querySelectorAll(".check");
+                let zongshu = 0;
+                let zongjia = 0;
+                checks.forEach((ele, index) => {
+                  if (ele.checked) {
+                    // 购物车总数量
+                    zongshu += this.forshop[index].num;
+                    // 购物车商品总价格
+                    zongjia += parseInt(
+                      this.forshop[index].wprice * this.forshop[index].num
+                    );
+                  }
+                });
+                this.$store.state.num_zong = zongshu;
+                this.$store.state.price_zong = zongjia;
               });
-            // 购物车总数量
-            let zongshu = 0;
-            usershop.forEach(el => {
-              zongshu += el.num;
-            });
-            this.$store.state.num_zong = zongshu;
-            // 购物车商品总价格
-            let zongjia = 0;
-            usershop.forEach(el => {
-              zongjia += parseInt(el.wprice * el.num);
-            });
-            this.$store.state.price_zong = zongjia;
           });
       });
     },
@@ -277,26 +286,73 @@ export default {
                 })
                 .then(res => {
                   this.forshop = usershop;
+                  // 计算总数量和总金额
+                  let checks = document.querySelectorAll(".check");
+                  let zongshu = 0;
+                  let zongjia = 0;
+                  checks.forEach((ele, index) => {
+                    if (ele.checked) {
+                      // 购物车总数量
+                      zongshu += this.forshop[index].num;
+                      // 购物车商品总价格
+                      zongjia += parseInt(
+                        this.forshop[index].wprice * this.forshop[index].num
+                      );
+                    }
+                  });
+                  this.$store.state.num_zong = zongshu;
+                  this.$store.state.price_zong = zongjia;
                 });
-              // 购物车总数量
-              let zongshu = 0;
-              usershop.forEach(el => {
-                zongshu += el.num;
-              });
-              this.$store.state.num_zong = zongshu;
-              // 购物车商品总价格
-              let zongjia = 0;
-              usershop.forEach(el => {
-                zongjia += parseInt(el.wprice * el.num);
-              });
-              this.$store.state.price_zong = zongjia;
             });
         });
       });
+    },
+    // 操作 - 复选框 动态计算数量价格
+    change() {
+      let checks = document.querySelectorAll(".check");
+      let zongshu = 0;
+      let zongjia = 0;
+      checks.forEach((ele, index) => {
+        if (ele.checked) {
+          // 购物车总数量
+          zongshu += this.forshop[index].num;
+          // 购物车商品总价格
+          zongjia += parseInt(
+            this.forshop[index].wprice * this.forshop[index].num
+          );
+        }
+      });
+      this.$store.state.num_zong = zongshu;
+      this.$store.state.price_zong = zongjia;
+    },
+    checkall(event) {
+      let checks = document.querySelectorAll(".check");
+      let zongshu = 0;
+      let zongjia = 0;
+      if (event.currentTarget.checked) {
+        checks.forEach((ele, index) => {
+          ele.checked = true;
+          // 购物车总数量
+          zongshu += this.forshop[index].num;
+          // 购物车商品总价格
+          zongjia += parseInt(
+            this.forshop[index].wprice * this.forshop[index].num
+          );
+        });
+        this.$store.state.num_zong = zongshu;
+        this.$store.state.price_zong = zongjia;
+      } else {
+        checks.forEach(el => {
+          el.checked = false;
+        });
+        this.$store.state.num_zong = 0;
+        this.$store.state.price_zong = 0;
+      }
     }
   },
   computed: mapGetters(["shopnum", "shopprice"]),
   mounted() {
+    let checkAll = document.getElementById("checkall");
     document.documentElement.scrollTop = 0;
     this.shopnum_2 = this.shopnum;
     // 获取已登录用户
