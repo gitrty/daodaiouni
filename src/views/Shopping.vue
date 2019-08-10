@@ -291,13 +291,17 @@ export default {
                   let zongshu = 0;
                   let zongjia = 0;
                   checks.forEach((ele, index) => {
+                    // console.info(checks.length)
+                    if(index==checks.length-1){
+                      return;
+                    }
                     if (ele.checked) {
                       // 购物车总数量
+                      // console.info(this.forshop[index].num)
                       zongshu += this.forshop[index].num;
                       // 购物车商品总价格
-                      zongjia += parseInt(
-                        this.forshop[index].wprice * this.forshop[index].num
-                      );
+                      zongjia += parseInt(this.forshop[index].wprice * this.forshop[index].num);
+                      // console.info(this.forshop)
                     }
                   });
                   this.$store.state.num_zong = zongshu;
