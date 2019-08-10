@@ -10,16 +10,9 @@
           <tbody>
             <tr>
               <td width="36" height="32">
-                <input
-                  type="checkbox"
-                  class="myselect"
-                  checked="checked"
-                  name="checkbox"
-                  value="checkbox"
-                />
               </td>
               <td width="38">
-                <div style="text-align:left" class="yahei font14 fontblack">全选</div>
+                <div style="text-align:center" class="yahei font14 fontblack">图片</div>
               </td>
               <td width="280">商品详情</td>
               <td width="100">钻石网报价</td>
@@ -46,7 +39,7 @@
           <tbody>
             <tr>
               <td width="36">
-                <input type="checkbox" checked="checked" id="mycheckbox" value="40359" />
+               
               </td>
               <td width="318" class="font14 fontblack">
                 <table width="318" border="0" cellspacing="0" cellpadding="0">
@@ -118,13 +111,6 @@
               <tbody>
                 <tr>
                   <td width="36" height="32">
-                    <input
-                      type="checkbox"
-                      class="myselect"
-                      checked="checked"
-                      name="checkbox"
-                      value="checkbox"
-                    />
                   </td>
                   <td width="106">
                     <div align="left" class="sl_zongji">
